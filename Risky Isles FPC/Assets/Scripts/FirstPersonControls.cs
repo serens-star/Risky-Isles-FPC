@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class FirstPersonControls : MonoBehaviour
 {
+    private Controls playerInput;
+    
     // Public variables to set movement and look speed, and the player camera
     public float moveSpeed; // Speed at which the player moves
     public float lookSpeed; // Sensitivity of the camera movement
@@ -25,27 +27,32 @@ characterController = GetComponent<CharacterController>();
 private void OnEnable()
 {
 // Create a new instance of the input actions
-var playerInput = new Controls();
+playerInput = new Controls();
 // Enable the input actions
 playerInput.Player.Enable();
 
-// Subscribe to the movement input events
-playerInput.Player.Movement.performed += ctx => moveInput =
-ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
-playerInput.Player.Movement.canceled += ctx => moveInput =
-Vector2.zero; // Reset moveInput when movement input is canceled
 
-// Subscribe to the look input events
-playerInput.Player.LookAround.performed += ctx => lookInput =
-ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
-playerInput.Player.LookAround.canceled += ctx => lookInput =
-Vector2.zero; // Reset lookInput when look input is canceled
-
-// Subscribe to the jump input event
-playerInput.Player.Jump1.performed += ctx => Jump(); // Call the Jump method when jump input is performed
 }
+
+
 private void Update()
 {
+    
+    // Subscribe to the movement input events
+    playerInput.Player.Movement.performed += ctx => moveInput =
+        ctx.ReadValue<Vector2>(); // Update moveInput when movement input is performed
+    playerInput.Player.Movement.canceled += ctx => moveInput =
+        Vector2.zero; // Reset moveInput when movement input is canceled
+
+// Subscribe to the look input events
+    playerInput.Player.LookAround.performed += ctx => lookInput =
+        ctx.ReadValue<Vector2>(); // Update lookInput when look input is performed
+    playerInput.Player.LookAround.canceled += ctx => lookInput =
+        Vector2.zero; // Reset lookInput when look input is canceled
+
+// Subscribe to the jump input event
+    playerInput.Player.Jump1.performed += ctx => Jump(); // Call the Jump method when jump input is performed
+    
 // Call Move and LookAround methods every frame to handle player movement and camera rotation
 Move();
 LookAround();
