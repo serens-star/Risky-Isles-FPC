@@ -194,7 +194,7 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.position = holdPosition.position;
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
-                holdingGun = true;t
+                holdingGun = true;
             }
         }
     }
