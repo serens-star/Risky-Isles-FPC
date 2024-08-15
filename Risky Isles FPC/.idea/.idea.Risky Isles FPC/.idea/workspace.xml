@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +93,7 @@
       <workItem from="1723625285312" duration="585000" />
       <workItem from="1723651569724" duration="453000" />
       <workItem from="1723652050787" duration="151000" />
+      <workItem from="1723704328021" duration="13000" />
     </task>
     <servers />
   </component>
