@@ -55,6 +55,7 @@ public class FirstPersonControls : MonoBehaviour
         // Subscribe to the movement input events 
         playerInput.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); //Update moveInput when movement input is performed
         playerInput.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // \ Reset moveInput when movement input is canceled 
+       
         // Subscribe to the look input events 
         playerInput.Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); //Update lookInput when look input is performed 
         playerInput.Player.LookAround.canceled += ctx => lookInput = Vector2.zero; // Reset lookInput when look input is canceled 
@@ -77,6 +78,7 @@ public class FirstPersonControls : MonoBehaviour
     {
         // Create a movement vector based on the input
         Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
+        
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
         
@@ -158,7 +160,7 @@ public class FirstPersonControls : MonoBehaviour
     public void PickUpObject()
     {
         //Check if we're already holding an object 
-        if (heldObject != null)
+        if (heldObject != null)   
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
             heldObject.transform.parent = null;
