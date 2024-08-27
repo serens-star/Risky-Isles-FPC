@@ -73,6 +73,7 @@ public class FirstPersonControls : MonoBehaviour
         Move();
         LookAround();
         ApplyGravity();
+        CheckInteractability();
     }
     public void Move()
     {
@@ -197,6 +198,21 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
                 holdingGun = true;
+            }
+        }
+    }
+    //Check Interactability shoots ray at object to check its tag/layer(details)
+    public void CheckInteractability()
+    {
+        //Crates a beam that's labelled ray, starting from player camera position & it shoots in the direction the player is looking 
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward); 
+        RaycastHit interact; //Result of what the ray hits 
+
+        if (Physics.Raycast(ray, out interact, pickUpRange))
+        {
+            if (interact.collider.CompareTag("PickUp"))
+            {
+                Debug.Log("Groceries");
             }
         }
     }
