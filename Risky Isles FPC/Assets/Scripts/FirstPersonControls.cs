@@ -1,6 +1,8 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
@@ -33,6 +35,9 @@ public class FirstPersonControls : MonoBehaviour
     private GameObject heldObject; // Ref to the currently held object
     public float pickUpRange = 3f; // Range wherein objects can be picked up 
     private bool holdingGun = false;
+    public TextMeshProUGUI interactableChecker;
+    public string nameStorage;
+    public LayerMask interactable;
 
     [Header("Crouch Controls")]
     public float crouchHeight = 1f; // make shorter 
@@ -204,16 +209,20 @@ public class FirstPersonControls : MonoBehaviour
     //Check Interactability shoots ray at object to check its tag/layer(details)
     public void CheckInteractability()
     {
+        interactableChecker.text = " ";
         //Crates a beam that's labelled ray, starting from player camera position & it shoots in the direction the player is looking 
         Ray ray = new Ray(playerCamera.position, playerCamera.forward); 
         RaycastHit interact; //Result of what the ray hits 
 
-        if (Physics.Raycast(ray, out interact, pickUpRange))
+        if (Physics.Raycast(ray, out interact, pickUpRange, interactable))
         {
-            if (interact.collider.CompareTag("PickUp"))
-            {
-                Debug.Log("Groceries");
-            }
+                nameStorage = interact.collider.name;
+                interactableChecker.text = $"{nameStorage}";
+        }
+        else
+        {
+            nameStorage = String.Empty;
+            interactableChecker.text = null;
         }
     }
 }
