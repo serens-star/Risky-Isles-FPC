@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +12,13 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(mainScene);
     }
-    
+
+    public void ClickQuit()
+    {
+        Application.Quit();
+        Debug.Log("No Game for You");
+    }
+
     void Update()
     {
         
