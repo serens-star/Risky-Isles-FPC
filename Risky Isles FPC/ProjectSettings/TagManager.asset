@@ -7,6 +7,8 @@ TagManager:
   - Gun
   - PickUp
   - Bullet
+  - Drink
+  - Food
   layers:
   - Default
   - TransparentFX

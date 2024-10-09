@@ -11745,6 +11745,7 @@ GameObject:
   - component: {fileID: 440638050}
   - component: {fileID: 440638056}
   - component: {fileID: 440638057}
+  - component: {fileID: 440638058}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -11891,7 +11892,7 @@ Transform:
   m_GameObject: {fileID: 440638049}
   serializedVersion: 2
   m_LocalRotation: {x: -0.01980447, y: 0.73696595, z: 0.016328124, w: 0.6754424}
-  m_LocalPosition: {x: -140.7, y: 6.4, z: 4.7}
+  m_LocalPosition: {x: -27.7, y: 5.3, z: -227}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -11930,6 +11931,21 @@ MonoBehaviour:
   minHunger: 0
   currentThirst: 0
   currentHunger: 0
+  thirstDecayRate: 1.5
+  hungerDecayRate: 1
+--- !u!114 &440638058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440638049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236c3cb40aa61174e8202edcc4f077bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConsumableItems: []
 --- !u!1001 &441696479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24069,7 +24085,7 @@ Canvas:
   m_GameObject: {fileID: 1001958476}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -35768,6 +35784,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3153968, y: 2.384296, z: 4.9345264}
   m_Center: {x: -0.120610535, y: 0, z: 0.6399639}
+--- !u!114 &1434331354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434331348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae3d76f0dc12b14688f068facbc4927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFood: 0
+  isWater: 1
+  hungerRestoreAmount: 0
+  thirstRestoreAmount: 10
 --- !u!1 &1441241616
 GameObject:
   m_ObjectHideFlags: 0
@@ -35852,7 +35884,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -45032,8 +45064,8 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 100
-  m_WholeNumbers: 1
-  m_Value: 0
+  m_WholeNumbers: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -46753,7 +46785,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e09fb95560596f9439a8236b977f77a5,
         type: 3}
       propertyPath: m_TagString
-      value: PickUp
+      value: Drink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46767,6 +46799,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1434331352}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e09fb95560596f9439a8236b977f77a5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1434331354}
   m_SourcePrefab: {fileID: 100100000, guid: e09fb95560596f9439a8236b977f77a5, type: 3}
 --- !u!1001 &1872781184
 PrefabInstance:

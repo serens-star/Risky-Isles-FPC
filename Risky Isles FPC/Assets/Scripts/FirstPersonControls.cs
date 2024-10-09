@@ -204,6 +204,22 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.parent = holdPosition;
                 holdingGun = true;
             }
+            else if (hit.collider.CompareTag("Drink"))
+            {
+                ConsumableItem consumable = hit.collider.GetComponent<ConsumableItem>();
+                if (consumable != null)
+                {
+                    consumable.Consume(GetComponent<PlayerStats>());
+                }
+            }
+            else if (hit.collider.CompareTag("Food"))
+            {
+                ConsumableItem consumable = hit.collider.GetComponent<ConsumableItem>();
+                if (consumable != null)
+                {
+                    consumable.Consume(GetComponent<PlayerStats>());
+                }
+            }
         }
     }
     //Check Interactability shoots ray at object to check its tag/layer(details)
