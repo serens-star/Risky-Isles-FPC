@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -17,11 +18,12 @@ public class PlayerStats : MonoBehaviour
     public float currentThirst;
 
     public float currentHunger;
-    
-    public float thirstDecayRate = 1f;
-    public float hungerDecayRate = 0.75f;
 
-    private bool isFood = false;
+    public GameObject gameOverPanel;
+    //public float thirstDecayRate = 1f;
+    //public float hungerDecayRate = 0.75f;
+
+    private bool isDead = false; 
     //private bool statsInitialized = false;
     
     void Start()
@@ -39,13 +41,13 @@ public class PlayerStats : MonoBehaviour
 
     IEnumerator HungerThirstDrainRoutine()
     {
-        while (true)
+        while (!isDead)
         {
-            yield return new WaitForSeconds(10); //decrease hunger very 2secs
+            yield return new WaitForSeconds(7); //decrease hunger very 2secs
             //if (!isFood) //remove hunger when player has no food
             {
                 DecreaseHunger(2); //amount of hunger that decrases
-                DecreaseThirst(5);//amount of thirt secrease
+                DecreaseThirst(4);//amount of thirt secrease
             }
         }
     }
@@ -56,6 +58,11 @@ public class PlayerStats : MonoBehaviour
         currentHunger = Mathf.Clamp(currentHunger, minHunger, maxHunger);
         Debug.Log("Hunger Decrease to: " + currentHunger);
         hungerThirstScript.SetHunger(currentHunger);
+
+        if (currentHunger <= 0 && !isDead)
+        {
+            Die();
+        }
 
        /* if (currentHunger <= 0 || currentThirst <= 0)
         {
@@ -74,6 +81,22 @@ public class PlayerStats : MonoBehaviour
         currentThirst = Mathf.Clamp(currentThirst, minThirst, maxThirst);
         Debug.Log("Thirst Decrease to: " + currentThirst);
         hungerThirstScript.SetThirst(currentThirst);
+
+        if (currentThirst <= 0 && !isDead)
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        if (!isDead)
+        {
+            isDead = true;
+            Debug.Log("You're Dead!");
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0; //pause ganme
+        }
     }
     // Method to increase thirst
     public void IncreaseThirst(float amount)
@@ -93,6 +116,18 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Hunger increased: " + currentHunger);
         
         hungerThirstScript.SetHunger(currentHunger);
+    }
+
+    /*public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);  
+    }*/
+
+    public void Retry()
+    {
+        Time.timeScale = 1;
+        StopAllCoroutines();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     /*private void StartHungerThirstDrain()

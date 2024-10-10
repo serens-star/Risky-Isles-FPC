@@ -48,13 +48,18 @@ public class FirstPersonControls : MonoBehaviour
    
     private void Awake()
     {
-    // Get and store the CharacterController component attached to this GameObject
-    characterController = GetComponent<CharacterController>();
+        DontDestroyOnLoad(gameObject);
+        // Get and store the CharacterController component attached to this GameObject
+        characterController = GetComponent<CharacterController>();
     }
     private void OnEnable()
-    { 
+    {
+        if (characterController == null)
+        {
+            characterController = GetComponent<CharacterController>();
+        }
         // Create a new instance of the input actions
-        var playerInput = new Controls();
+        playerInput = new Controls(); //var
         // Enable the input actions
         playerInput.Player.Enable();
         // Subscribe to the movement input events 
