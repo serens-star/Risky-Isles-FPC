@@ -7,7 +7,6 @@
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene_Profiles/PostProcessing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene_Profiles/PostProcessing Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/SampleSceneProfile.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +141,7 @@
       <workItem from="1728413051730" duration="12032000" />
       <workItem from="1728512702078" duration="1466000" />
       <workItem from="1728549675994" duration="16768000" />
-      <workItem from="1728595214108" duration="666000" />
+      <workItem from="1728595214108" duration="1398000" />
     </task>
     <servers />
   </component>
