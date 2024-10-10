@@ -7,30 +7,37 @@ public class HungerThirstMeter : MonoBehaviour
 {
     public Slider hungerSlider;
     public Slider thirstSlider;
-    public PlayerStats playerStats;
+    //public PlayerStats playerStats;
 
-    public void SetThirst(int thirst)
+    public void SetThirst(float thirst)
     { 
         
         thirstSlider.value = thirst;
-        Debug.Log("NEED WATER: " + thirst);
+        Debug.Log("Thirst Level: " + thirst);
         //Canvas.ForceUpdateCanvases();
     }
 
-    public void SetHunger(int hunger)
+   /* public void SetSliderMax(int thirst)
+    {
+        thirstSlider.maxValue = thirst;
+        SetSliderMax(thirst);
+    } */
+
+    public void SetHunger(float hunger)
     {
         hungerSlider.value = hunger;
-        Debug.Log("NEED FOOD: " + hunger);
+        Debug.Log("Hunger Level: " + hunger);
         //Canvas.ForceUpdateCanvases();
     }
    
-    public void SetMaxThirst(int thirst)
+    public void SetMaxThirst(float thirst)
      {
         thirstSlider.maxValue = thirst;
+       // SetMaxThirst(thirst);
         thirstSlider.value = thirst;
      }
     
-    public void SetMaxHunger(int hunger)
+    public void SetMaxHunger(float hunger)
      {
          hungerSlider.maxValue = hunger;
          hungerSlider.value = hunger;
