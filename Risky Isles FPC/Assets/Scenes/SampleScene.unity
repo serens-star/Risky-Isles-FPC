@@ -12139,13 +12139,14 @@ GameObject:
   - component: {fileID: 459516013}
   - component: {fileID: 459516015}
   - component: {fileID: 459516014}
+  - component: {fileID: 459516016}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &459516013
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12205,6 +12206,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 459516012}
   m_CullTransparentMesh: 1
+--- !u!114 &459516016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 459516012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bcb024cb00fb1643b16d327bc8f746e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerThirstScript: {fileID: 1001958481}
+  maxThirst: 100
+  minThirst: 0
+  maxHunger: 100
+  minHunger: 0
+  currentThirst: 0
+  currentHunger: 0
+  gameOverPanel: {fileID: 0}
+  GameOverAudioSource: {fileID: 693187250}
 --- !u!1 &460456442 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2709745179095625331, guid: 671ae3442db57ac4ba4998a5a9a7156d,
