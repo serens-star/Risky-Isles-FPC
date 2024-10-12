@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public string mainScene = "SampleScene";
     public GameObject aboutPanel;
+    
     public void ClickStart()
     {
         SceneManager.LoadSceneAsync(mainScene);
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
     {
         aboutPanel.SetActive(false);
     }
+    
 
     void Update()
     {

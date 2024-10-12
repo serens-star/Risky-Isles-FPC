@@ -20,6 +20,8 @@ public class PlayerStats : MonoBehaviour
     public float currentHunger;
 
     public GameObject gameOverPanel;
+
+    public AudioSource GameOverAudioSource;
     //public float thirstDecayRate = 1f;
     //public float hungerDecayRate = 0.75f;
 
@@ -94,6 +96,15 @@ public class PlayerStats : MonoBehaviour
         {
             isDead = true;
             Debug.Log("You're Dead!");
+            if (GameOverAudioSource != null)
+            {
+                GameOverAudioSource.Play();
+            }
+            else
+            {
+                Debug.LogWarning("Womp Womp");
+            }
+
             gameOverPanel.SetActive(true);
             Time.timeScale = 0; //pause ganme
         }
