@@ -95,17 +95,28 @@ public class PlayerStats : MonoBehaviour
         if (!isDead)
         {
             isDead = true;
-            Debug.Log("You're Dead!");
-            if (GameOverAudioSource != null)
+            Debug.Log("(UI)You're Dead!");
+            
+            if (gameOverPanel != null)
             {
-                GameOverAudioSource.Play();
+                gameOverPanel.SetActive(true);
+                Debug.Log("G.O. Panel Activated");
             }
             else
             {
-                Debug.LogWarning("Womp Womp");
+                Debug.LogWarning("Game Over Panel Isn't Assigned");
             }
 
-            gameOverPanel.SetActive(true);
+            if (GameOverAudioSource != null)
+            {
+                GameOverAudioSource.Play();
+                Debug.Log("G.O. Audio Played");
+            }
+            else
+            {
+                Debug.LogWarning("Game Over Audio Isn't Assigned");
+            }
+            
             Time.timeScale = 0; //pause ganme
         }
     }

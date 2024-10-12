@@ -10,6 +10,8 @@ public class ObjectInteraction : MonoBehaviour
     public float interactionRange = 3f;
     public Transform playerCamera;
 
+    public BackgroundMusicController backgroundMusicController;
+
     private bool isLookingAtObject = false;
 
     void Update()
@@ -24,6 +26,11 @@ public class ObjectInteraction : MonoBehaviour
                 if (InteractionAudio != null)
                 {
                     InteractionAudio.Play();
+
+                    if (backgroundMusicController != null)
+                    {
+                        backgroundMusicController.SoftenBackgroundMusic();
+                    }
                 }
                 else
                 {
@@ -31,5 +38,10 @@ public class ObjectInteraction : MonoBehaviour
                 }
             }
         }
+
+        if (InteractionAudio != null && !InteractionAudio.isPlaying && backgroundMusicController != null)
+        {
+            backgroundMusicController.RestoreBackgroundMusic();
+        } 
     }
 }
