@@ -36,21 +36,30 @@ public class FirstPersonControls : MonoBehaviour
     public float pickUpRange = 3f; // Range wherein objects can be picked up 
     private bool holdingGun = false;
     public TextMeshProUGUI interactableChecker;
-    public string nameStorage;
-    public LayerMask interactable;
+    //public string nameStorage;
+    public LayerMask interactableLayer;
+
+    [Header("Note UI")] 
+    public GameObject noteDisplayPanel;
+    public TextMeshProUGUI noteTextDisplay;
+    
 
     [Header("Crouch Controls")]
     public float crouchHeight = 1f; // make shorter 
     public float standingHeight = 2f; // make normal height
     public float crouchSpeed = 1.5f; // rate of movement while crouching 
     private bool isCrouching = false; // ensures default position is = standing
-   
-   
+
+    [Header("Player HP:")] 
+    public int playerHp;
+    
+    
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         // Get and store the CharacterController component attached to this GameObject
         characterController = GetComponent<CharacterController>();
+        noteDisplayPanel.SetActive(false);
     }
     private void OnEnable()
     {
@@ -176,6 +185,8 @@ public class FirstPersonControls : MonoBehaviour
             heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
             heldObject.transform.parent = null;
             holdingGun = false;
+            heldObject = null;
+            return;
         }
         
         //Perfrom a Raycast from the camera's postion forward 
@@ -185,6 +196,7 @@ public class FirstPersonControls : MonoBehaviour
         Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
+           
             //Check if the hit object has the tag "pickup"
             if (hit.collider.CompareTag("PickUp"))
             {
@@ -225,7 +237,27 @@ public class FirstPersonControls : MonoBehaviour
                     consumable.Consume(GetComponent<PlayerStats>());
                 }
             }
+            else if (hit.collider.CompareTag("Readable"))
+            {
+                StartCoroutine(ShowNoteUI());
+                var message = hit.collider.GetComponent<Note>();
+                noteTextDisplay.text = message.noteMessage;
+            }
         }
+    }
+
+    private IEnumerator ShowNoteUI()
+    {
+        noteDisplayPanel.SetActive(true);        
+        yield return new WaitForSeconds(2f);
+        noteTextDisplay.text = " ";
+        noteDisplayPanel.SetActive(false);
+        yield return null;
+    }
+
+    public void HideNoteUI()
+    {
+        noteDisplayPanel.SetActive(false);
     }
     //Check Interactability shoots ray at object to check its tag/layer(details)
     public void CheckInteractability()
@@ -233,17 +265,11 @@ public class FirstPersonControls : MonoBehaviour
         interactableChecker.text = " ";
         //Crates a beam that's labelled ray, starting from player camera position & it shoots in the direction the player is looking 
         Ray ray = new Ray(playerCamera.position, playerCamera.forward); 
-        RaycastHit interact; //Result of what the ray hits 
+        RaycastHit hit; //Result of what the ray hits 
 
-        if (Physics.Raycast(ray, out interact, pickUpRange, interactable))
+        if (Physics.Raycast(ray, out hit, pickUpRange, interactableLayer))
         {
-                nameStorage = interact.collider.name;
-                interactableChecker.text = $"{nameStorage}";
-        }
-        else
-        {
-            nameStorage = String.Empty;
-            interactableChecker.text = null;
+            interactableChecker.text = hit.collider.name;
         }
     }
 }

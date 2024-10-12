@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - Drink
   - Food
+  - Interactable
+  - Readable
   layers:
   - Default
   - TransparentFX
@@ -19,8 +21,8 @@ TagManager:
   - Ground
   - Interactable
   - GameOver
-  - 
-  - 
+  - InteractableLayer
+  - Particles
   - 
   - 
   - 
