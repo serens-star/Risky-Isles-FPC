@@ -409,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &183808151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1006,10 +1006,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "GAME NAME: RISKY ISLES\n\nVERSION: 1.3\n\nDEVELOPED BY: GROUP 8\n\nMORE
-    ABOUT GAME:\n   BLAH BLAH BLAH BLAH BLAH BLAH\n   BLAH BLAH BLAH BLAH BLAH BLAH\n  
-    BLAH BLAH BLAH BLAH BLAH BLAH\n   BLAH BLAH BLAH BLAH BLAH BLAH\n   \n   BLAH
-    BLAH BLAH BLAH BLAH BLAH\n   BLAH BLAH BLAH BLAH BLAH BLAH\n   BLAH BLAH BLAH
-    BLAH BLAH BLAH\n   BLAH BLAH BLAH BLAH BLAH BLAH"
+    ABOUT GAME:\n   \"In a world left in ruins by a devastating outbreak, every trip
+    for supplies could be your last. Navigate the dark, eerie aisles of an abandoned
+    grocery store, where shadows and secrets linger around every corner. As you scavenge
+    for the essentials of survival\u2014food, water, and the truth\u2014each step
+    brings you closer to uncovering the story of what happened here, and the fate
+    of those who came before. But beware: the line between reality and nightmare
+    blurs, and the ghosts of the past are not always what they seem. Will you make
+    it out with what you need, or will the store\u2019s haunting secrets claim another
+    soul?\""
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1036,8 +1041,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38
-  m_fontSizeBase: 38
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2429,8 +2434,8 @@ SceneRoots:
   - {fileID: 233284423}
   - {fileID: 147719806}
   - {fileID: 1510634868}
-  - {fileID: 1164413895}
   - {fileID: 22366069}
   - {fileID: 19522446}
   - {fileID: 1189098947}
   - {fileID: 1010724893}
+  - {fileID: 1164413895}
