@@ -50,8 +50,8 @@ public class FirstPersonControls : MonoBehaviour
     public float crouchSpeed = 1.5f; // rate of movement while crouching 
     private bool isCrouching = false; // ensures default position is = standing
 
-    [Header("Player HP:")] 
-    public int playerHp;
+    /*[Header("Player HP:")] 
+    public int playerHp;*/
     
     
     private void Awake()

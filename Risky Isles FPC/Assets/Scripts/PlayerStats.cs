@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public HungerThirstMeter hungerThirstScript;
+    public Slider healthSlider;
     private Coroutine hungerThirstCoroutine; 
    
   
@@ -14,10 +16,15 @@ public class PlayerStats : MonoBehaviour
 
     public float maxHunger = 100;
     public float minHunger = 0;
+    
+    public float maxHealth = 100;
+    public float minHealth = 0;
 
     public float currentThirst;
 
     public float currentHunger;
+
+    public float currentHealth;
 
     public GameObject gameOverPanel;
 
@@ -30,22 +37,29 @@ public class PlayerStats : MonoBehaviour
     
     void Start()
     {
-      // InitializeStats();
        currentThirst = maxThirst;
-       //currentThirst = maxThirst;
        currentHunger = maxHunger;
+       currentHealth = maxHealth;
             
        hungerThirstScript.SetMaxThirst(maxThirst);
        hungerThirstScript.SetMaxHunger(maxHunger);
 
-       hungerThirstCoroutine = StartCoroutine(HungerThirstDrainRoutine());
+       if (healthSlider != null)
+       {
+           healthSlider.maxValue = maxHealth;
+           healthSlider.value = currentHealth;
+       }
+
+       StartCoroutine(HungerThirstDrainRoutine());
+
+       //hungerThirstCoroutine = StartCoroutine(HungerThirstDrainRoutine());
     }
 
     IEnumerator HungerThirstDrainRoutine()
     {
         while (!isDead)
         {
-            yield return new WaitForSeconds(0.3f); //decrease hunger very 2secs
+            yield return new WaitForSeconds(7f); //decrease hunger very 2secs
             //if (!isFood) //remove hunger when player has no food
             {
                 DecreaseHunger(2); //amount of hunger that decrases
@@ -89,6 +103,22 @@ public class PlayerStats : MonoBehaviour
             Die();
         }
     }
+    public void TakeDamage(float amount)
+    {
+        currentHealth -= amount;
+        currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+        Debug.Log("Current Health: " + currentHealth);
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth;
+        }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
 
     private void Die()
     {
@@ -120,6 +150,7 @@ public class PlayerStats : MonoBehaviour
             Time.timeScale = 0; //pause ganme
         }
     }
+    
     // Method to increase thirst
     public void IncreaseThirst(float amount)
     {
@@ -138,6 +169,13 @@ public class PlayerStats : MonoBehaviour
         Debug.Log("Hunger increased: " + currentHunger);
         
         hungerThirstScript.SetHunger(currentHunger);
+    }
+
+    public void IncreaseHealth(float amount)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
+        Debug.Log("Health increased: " + currentHealth);
     }
 
     /*public void RestartGame()

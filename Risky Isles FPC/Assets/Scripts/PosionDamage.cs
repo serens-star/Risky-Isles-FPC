@@ -5,23 +5,49 @@ using UnityEngine;
 
 public class PosionDamage : MonoBehaviour
 {
-    public FirstPersonControls playerTarget;
-    public int DamageDealtOverTime;
-    public float timeBetweenDamage;
+    public GameObject player;
+    public int DamageDealtOverTime = 5;
+    public float timeBetweenDamage = 2f;
+
+    private PlayerStats playerStats;
+    private bool isDamaging = false;
+
+    private void Start()
+    {
+        if (player != null)
+        {
+            playerStats = player.GetComponent<PlayerStats>();
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
-        StartCoroutine(DMGoverTime());
+        if (other.CompareTag("Player") && !isDamaging)
+        {
+            isDamaging = true;
+            StartCoroutine(DMGoverTime());
+        }
     }
-
     private void OnTriggerExit(Collider other)
     {
-        StopCoroutine(DMGoverTime());
+        if (other.CompareTag("Player"))
+        {
+            isDamaging = false;
+            StopCoroutine(DMGoverTime());
+        }
     }
 
     public IEnumerator DMGoverTime()
     {
-        yield return new WaitForSeconds(timeBetweenDamage);
-        playerTarget.playerHp -= DamageDealtOverTime;        
+        while (isDamaging)
+        {
+            yield return new WaitForSeconds(timeBetweenDamage);
+            if (playerStats != null)
+            {
+                playerStats.TakeDamage(DamageDealtOverTime);
+            }
+        }
+
+        isDamaging = false;
     }
 }

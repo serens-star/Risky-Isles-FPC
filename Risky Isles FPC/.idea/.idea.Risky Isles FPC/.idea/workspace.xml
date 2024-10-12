@@ -6,14 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ControlsDsk/ControlRoomDesk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ControlsDsk/ControlRoomDesk.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ControlsDsk/ControlsRoom_Textured.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/ControlsDsk/ControlsRoom_Textured.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Gate/StoreGate_Rusted.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Gate/StoreGate_Rusted.fbx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ObjectInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NegativeZones/PoisonZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NegativeZones/PoisonZone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ConsumableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ConsumableItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HungerThirstMeter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HungerThirstMeter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/HealthManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BackgroundMusicController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Note.cs" root0="FORCE_HIGHLIGHTING" />
@@ -155,7 +155,7 @@
       <workItem from="1728659288855" duration="865000" />
       <workItem from="1728677302290" duration="15490000" />
       <workItem from="1728710050483" duration="1948000" />
-      <workItem from="1728739035012" duration="2972000" />
+      <workItem from="1728739035012" duration="14012000" />
     </task>
     <servers />
   </component>

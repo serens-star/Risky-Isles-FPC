@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4339363678571001039}
   - component: {fileID: 898826660730236710}
-  - component: {fileID: 800338617568989339}
   m_Layer: 0
   m_Name: PoisonZone
   m_TagString: Untagged
@@ -54,18 +53,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 120.99, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &800338617568989339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835258328939237355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b285cb0ca927ea4fb69e80f1f73af8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTarget: {fileID: 0}
-  DamageDealtOverTime: 1
-  timeBetweenDamage: 2
