@@ -6,13 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NegativeZones/PoisonZone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NegativeZones/PoisonZone.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ConsumableItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ConsumableItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ActionMaps/Controls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ActionMaps/Controls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ActionMaps/Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ActionMaps/Controls.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge door_001.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge door_001.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorAnimation.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorClosing.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorClosing.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HungerThirstMeter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HungerThirstMeter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PosionDamage.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Bar 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Bar 2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +104,7 @@
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
-      <option name="listenPortForConnections" value="false" />
+      <option name="listenPortForConnections" value="true" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
@@ -155,7 +159,7 @@
       <workItem from="1728659288855" duration="865000" />
       <workItem from="1728677302290" duration="15490000" />
       <workItem from="1728710050483" duration="1948000" />
-      <workItem from="1728739035012" duration="14012000" />
+      <workItem from="1728739035012" duration="17253000" />
     </task>
     <servers />
   </component>

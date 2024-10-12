@@ -85,6 +85,10 @@ public class FirstPersonControls : MonoBehaviour
         // Subscribe to the pick-up input event 
         playerInput.Player.PickUp.performed += ctx => PickUpObject(); //Call the PickUpObject when pick-up input is performed
         playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call tbe ToggleCrouch Method when crouch input is performed
+        
+        //Interact with object using the F Key
+        playerInput.Player.InterAct.performed += ctx => Interact(); //Call the PickUpObject when pick-up input is performed
+
     }
     private void Update()
     {
@@ -260,6 +264,12 @@ public class FirstPersonControls : MonoBehaviour
         noteDisplayPanel.SetActive(false);
     }
     //Check Interactability shoots ray at object to check its tag/layer(details)
+    
+    [Header("Animator")]
+    public Animator FridgeDoor;
+
+    [SerializeField]private int Opened;
+    public LayerMask InteractLayer;
     public void CheckInteractability()
     {
         interactableChecker.text = " ";
@@ -270,6 +280,39 @@ public class FirstPersonControls : MonoBehaviour
         if (Physics.Raycast(ray, out hit, pickUpRange, interactableLayer))
         {
             interactableChecker.text = hit.collider.name;
+            
+            
+        }
+        else if (Physics.Raycast(ray, out hit, pickUpRange, InteractLayer))
+        {
+            interactableChecker.text = hit.collider.name + "Click F to interact";
+            
+            
+        }
+
+       
+    }
+
+    public void Interact()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+        // Debugging: Draw the ray in the Scene view
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
+        if (Physics.Raycast(ray, out hit, pickUpRange, InteractLayer))
+        {        
+
+            if (hit.collider.gameObject.CompareTag("Fridge") && Opened == 0)
+            {
+                Opened++;
+                FridgeDoor.SetBool("Open", true);
+
+            }
+            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened == 1)
+            {
+                Opened--;
+                FridgeDoor.SetBool("Open", false);
+            }
         }
     }
 }

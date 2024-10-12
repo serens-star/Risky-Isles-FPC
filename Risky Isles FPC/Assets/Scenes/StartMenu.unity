@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &19522443
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1584,6 +1584,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoreGate_Rusted
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b0a0c048efe0c63469e1745bfe57ace7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1887,7 +1892,7 @@ PrefabInstance:
     - target: {fileID: 7918391530681097575, guid: 9e15ced8a1102444facc6e65a33aaa10,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1912,7 +1917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1510634865
 MonoBehaviour:
   m_ObjectHideFlags: 0

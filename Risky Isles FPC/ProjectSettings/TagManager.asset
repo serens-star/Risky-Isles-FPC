@@ -11,6 +11,8 @@ TagManager:
   - Food
   - Interactable
   - Readable
+  - PoisonZone
+  - Fridge
   layers:
   - Default
   - TransparentFX
