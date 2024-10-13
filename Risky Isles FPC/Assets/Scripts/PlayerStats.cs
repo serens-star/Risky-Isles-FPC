@@ -21,13 +21,10 @@ public class PlayerStats : MonoBehaviour
     public float minHealth = 0;
 
     public float currentThirst;
-
     public float currentHunger;
-
     public float currentHealth;
 
     public GameObject gameOverPanel;
-
     public AudioSource GameOverAudioSource;
     //public float thirstDecayRate = 1f;
     //public float hungerDecayRate = 0.75f;
@@ -59,11 +56,11 @@ public class PlayerStats : MonoBehaviour
     {
         while (!isDead)
         {
-            yield return new WaitForSeconds(7f); //decrease hunger very 2secs
+            yield return new WaitForSeconds(6f); //decrease hunger very 2secs
             //if (!isFood) //remove hunger when player has no food
             {
-                DecreaseHunger(2); //amount of hunger that decrases
-                DecreaseThirst(4);//amount of thirt secrease
+                DecreaseHunger(0.00001f); //amount of hunger that decrases
+                DecreaseThirst(4f);//amount of thirt secrease
             }
         }
     }
@@ -100,11 +97,13 @@ public class PlayerStats : MonoBehaviour
 
         if (currentThirst <= 0 && !isDead)
         {
-            Die();
+            TakeDamage(10);
         }
     }
     public void TakeDamage(float amount)
     {
+        if (isDead) return;
+        
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, minHealth, maxHealth);
         Debug.Log("Current Health: " + currentHealth);
@@ -187,6 +186,7 @@ public class PlayerStats : MonoBehaviour
     {
         Time.timeScale = 1;
         StopAllCoroutines();
+        Destroy(gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

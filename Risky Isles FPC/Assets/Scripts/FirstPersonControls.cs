@@ -253,7 +253,7 @@ public class FirstPersonControls : MonoBehaviour
     private IEnumerator ShowNoteUI()
     {
         noteDisplayPanel.SetActive(true);        
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5.5f);
         noteTextDisplay.text = " ";
         noteDisplayPanel.SetActive(false);
         yield return null;
