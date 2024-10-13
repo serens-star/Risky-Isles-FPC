@@ -56,7 +56,7 @@ public class PlayerStats : MonoBehaviour
     {
         while (!isDead)
         {
-            yield return new WaitForSeconds(6f); //decrease hunger very 2secs
+            yield return new WaitForSeconds(6.5f); //decrease hunger very 2secs
             //if (!isFood) //remove hunger when player has no food
             {
                 DecreaseHunger(0.00001f); //amount of hunger that decrases

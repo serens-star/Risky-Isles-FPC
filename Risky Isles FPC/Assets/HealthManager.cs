@@ -14,26 +14,44 @@ public class HealthManager : MonoBehaviour
 
     public GameObject gameOverPanel;
     public AudioSource GameOverAudioSource;
+    
+    //Green Panel shows to give gas effect
+    public GameObject GasBlindness;
+
+    private int GC;//Gas Choke
 
     private void Start()
     {
         currentHealth = maxHealth;
         HealthBar.maxValue = maxHealth;
         HealthBar.value = currentHealth;
+        GasBlindness.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PoisonZone"))
+        if (other.gameObject.CompareTag("PoisonZone") && GC == 0)
         {
+            GC++;
+            StartCoroutine(GasBlindnesseffect());
             isChoking = true;
         }
         
     }
+
+    IEnumerator GasBlindnesseffect()
+    {
+        GasBlindness.SetActive(true);
+        yield return new WaitForSeconds(1);
+        GasBlindness.SetActive(false);
+        yield return new WaitForSeconds(1);
+        StartCoroutine(GasBlindnesseffect());
+    }
     
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("PoisonZone"))
+        if (other.gameObject.CompareTag("PoisonZone") && GC == 1)
         {
+            GC--;
             isChoking = false;
         }
         
@@ -46,13 +64,20 @@ public class HealthManager : MonoBehaviour
 
         if (isChoking)
         {
-            currentHealth -= 0.01f;
+            currentHealth -= 0.0075f;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
             if (currentHealth <= 0)
             {
                 Die();
             }
+        }
+
+        if (GC == 0)
+        {
+            GasBlindness.SetActive(false);
+            StopAllCoroutines();
+
         }
     }
 
