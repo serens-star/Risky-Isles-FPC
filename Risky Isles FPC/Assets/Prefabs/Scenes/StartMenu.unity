@@ -409,7 +409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &183808151
 RectTransform:
   m_ObjectHideFlags: 0
@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.090615846, g: 0.17713062, b: 0.335849, a: 0.5411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -666,7 +666,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.3584906, g: 0.1968316, b: 0.1968316, a: 1}
     m_HighlightedColor: {r: 0.6679245, g: 0.63389814, b: 0.63389814, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -982,7 +982,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -510, y: 239}
+  m_AnchoredPosition: {x: -510, y: 240}
   m_SizeDelta: {x: 200, y: 70.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &488475059
@@ -1005,16 +1005,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "GAME NAME: RISKY ISLES\n\nVERSION: 1.3\n\nDEVELOPED BY: GROUP 8\n\nMORE
-    ABOUT GAME:\n   \"In a world left in ruins by a devastating outbreak, every trip
-    for supplies could be your last. Navigate the dark, eerie aisles of an abandoned
-    grocery store, where shadows and secrets linger around every corner. As you scavenge
-    for the essentials of survival\u2014food, water, and the truth\u2014each step
-    brings you closer to uncovering the story of what happened here, and the fate
-    of those who came before. But beware: the line between reality and nightmare
-    blurs, and the ghosts of the past are not always what they seem. Will you make
-    it out with what you need, or will the store\u2019s haunting secrets claim another
-    soul?\""
+  m_text: "Game Synopsis:\n\na viral gaseous outbreak has Taken over the streets
+    of kounterberry, resources have gotten scarce and so have the people. Iris used
+    to live around here when she was younger, well up until she had to leave home
+    for college. \n\nHer and her friends would often frequent the convenient store
+    a couple of blocks from her house. it slowly became one of her favourite places
+    growing up. Admittedly, it wasn't just because the store clerks would give them
+    free snacks whenever they'd stop by, no. \n\nit was more so that her dad worked
+    there too, well, more like he owned it. he spent all his time there, it was like
+    his second home. so naturally it became hers too. Iris and her dad were very
+    close, especially when she was younger, they were inseperable. \n\nbut weirdly
+    enough, they're relationship got strained as she grew older. it felt like the
+    more she grow the less and less they had in common. it didn't help that that
+    she got busy with school, and friends that she stopped visiting the store as
+    often and it seemed like he never made the effort to spend time with her outside
+    the store. \n\nit didn't get any better when she moved away for college. it wasn't
+    all bad though, they'd still make time to call and write to each other (her dad
+    is very old-fashioned), but it wasn't the same. \n\nher dad liked to keep letter
+    and journal entries of his days at the store, she thinks it helped him pass the
+    time when things were slow at the store, or to just keep track of his thoughts.
+    That's one thing she's become accustomed to at her days in college, she'd look
+    forward to his letters recounting his mundane days back home. \n\nSo when weeks
+    went by without a letter or a call from him, she knew something was wrong. she
+    spent her entire finals week an anxious mess wondering what could have happened
+    to him, if anything happened to him at all. \n\nshe's made it her mission to
+    find out what happened to her dad, or she'll die trying..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1023,8 +1038,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280746168
+  m_fontColor: {r: 0, g: 0.85660374, b: 0.85441625, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1036,13 +1051,13 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
+  m_TextStyleHashCode: 97690656
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1053,7 +1068,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 2
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1077,7 +1092,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -38.52179, z: -864.7414, w: -529.48596}
+  m_margin: {x: -13.482727, y: -72.65863, z: -910.75104, w: -529.48596}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1748,6 +1763,135 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainScene: SampleScene
   aboutPanel: {fileID: 0}
+--- !u!1 &1160963909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1160963911}
+  - component: {fileID: 1160963910}
+  m_Layer: 0
+  m_Name: BackgroundAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1160963910
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160963909}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 08e5a8b5ce687014c916fa231edcd4da,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: c0ed71f78a08e634da9cfb1bab3c14f1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1160963911
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160963909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1164413892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,3 +2583,4 @@ SceneRoots:
   - {fileID: 1189098947}
   - {fileID: 1010724893}
   - {fileID: 1164413895}
+  - {fileID: 1160963911}
