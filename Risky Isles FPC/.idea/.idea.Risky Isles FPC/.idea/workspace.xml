@@ -8,6 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/HealthManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HealthManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
     </list>
@@ -159,7 +161,7 @@
       <workItem from="1728812803517" duration="957000" />
       <workItem from="1728816464313" duration="10076000" />
       <workItem from="1728844976052" duration="1542000" />
-      <workItem from="1728850441070" duration="1419000" />
+      <workItem from="1728850441070" duration="2234000" />
     </task>
     <servers />
   </component>
