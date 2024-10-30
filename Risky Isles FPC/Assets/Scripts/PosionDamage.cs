@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PosionDamage : MonoBehaviour
+/*public class PosionDamage : MonoBehaviour
 {
     public GameObject player;
     public int DamageDealtOverTime = 5;
@@ -50,4 +50,4 @@ public class PosionDamage : MonoBehaviour
 
         isDamaging = false;
     }
-}
+}*/

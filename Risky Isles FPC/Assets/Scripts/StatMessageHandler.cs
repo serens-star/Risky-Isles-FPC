@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class StartMessageHandler : MonoBehaviour
 {
     public GameObject startMessageUI; // Assign your Text UI element
-    public float displayDuration = 5f; // Duration to display the message
+    public float displayDuration = 9f; // Duration to display the message
 
     void Start()
     {

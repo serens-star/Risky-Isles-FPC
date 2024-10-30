@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConsumableItem : MonoBehaviour
+/*public class ConsumableItem : MonoBehaviour
 {
     public bool isFood;
     public bool isWater;
@@ -30,4 +30,4 @@ public class ConsumableItem : MonoBehaviour
 
         Destroy(gameObject);
     }
-}
+}*/

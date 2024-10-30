@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthManager : MonoBehaviour
+/*public class HealthManager : MonoBehaviour
 {
     public Slider HealthBar;
     [SerializeField] private float maxHealth = 100f;
@@ -114,4 +114,4 @@ public class HealthManager : MonoBehaviour
     }
 
    
-}
+}*/

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PlayerStats : MonoBehaviour
+/*public class PlayerStats : MonoBehaviour
 {
     public HungerThirstMeter hungerThirstScript;
     public Slider healthSlider;
@@ -86,9 +86,9 @@ public class PlayerStats : MonoBehaviour
             HungerThirstMeter.HungerSlider(currentHunger);
             
         } */
-    }
+    //}
 
-    private void DecreaseThirst(float amount)
+    /*private void DecreaseThirst(float amount)
     {
         currentThirst -= amount;
         currentThirst = Mathf.Clamp(currentThirst, minThirst, maxThirst);
@@ -182,7 +182,7 @@ public class PlayerStats : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);  
     }*/
 
-    public void Retry()
+    /*public void Retry()
     {
         Time.timeScale = 1;
         StopAllCoroutines();
@@ -251,4 +251,4 @@ public class PlayerStats : MonoBehaviour
     }*/
 
     
-}
+//}

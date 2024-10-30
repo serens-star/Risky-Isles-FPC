@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+/*public class Inventory : MonoBehaviour
 {
     public List<ConsumableItem> ConsumableItems = new List<ConsumableItem>();
 
@@ -16,4 +16,4 @@ public class Inventory : MonoBehaviour
         item.Consume(playerStats);
         ConsumableItems.Remove(item);
     }
-}
+}*/

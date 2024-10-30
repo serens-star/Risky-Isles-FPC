@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HungerThirstMeter : MonoBehaviour
-{
+//blic class HungerThirstMeter : MonoBehaviour
+/*{
     public Slider hungerSlider;
     public Slider thirstSlider;
     public Slider healthSlider;
@@ -24,7 +24,7 @@ public class HungerThirstMeter : MonoBehaviour
         SetSliderMax(thirst);
     } */
 
-    public void SetHunger(float hunger)
+  /*public void SetHunger(float hunger)
     {
         hungerSlider.value = hunger;
         Debug.Log("Hunger Level: " + hunger);
@@ -57,4 +57,4 @@ public class HungerThirstMeter : MonoBehaviour
     }
     
     
-}
+}*/
