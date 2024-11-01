@@ -105,10 +105,15 @@ public class FirstPersonControls : MonoBehaviour
     private void Update()
     {
         // Call Move and LookAround methods every frame to handle player movement and camera rotation
-        Move();
-        LookAround();
+        if (!isRotatingObject)
+        {
+            Move();
+            LookAround();
+        }
+        
         ApplyGravity();
         CheckInteractability();
+        
         if (heldObject != null)
         {
             PositionHeldObject();

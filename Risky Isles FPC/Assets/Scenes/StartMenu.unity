@@ -1052,31 +1052,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Game Synopsis:\n\na viral gaseous outbreak has Taken over the streets
-    of kounterberry, resources have gotten scarce and so have the people. Iris used
-    to live around here when she was younger, well up until she had to leave home
-    for college. \n\nHer and her friends would often frequent the convenient store
-    a couple of blocks from her house. it slowly became one of her favourite places
-    growing up. Admittedly, it wasn't just because the store clerks would give them
-    free snacks whenever they'd stop by, no. \n\nit was more so that her dad worked
-    there too, well, more like he owned it. he spent all his time there, it was like
-    his second home. so naturally it became hers too. Iris and her dad were very
-    close, especially when she was younger, they were inseperable. \n\nbut weirdly
-    enough, they're relationship got strained as she grew older. it felt like the
-    more she grow the less and less they had in common. it didn't help that that
-    she got busy with school, and friends that she stopped visiting the store as
-    often and it seemed like he never made the effort to spend time with her outside
-    the store. \n\nit didn't get any better when she moved away for college. it wasn't
-    all bad though, they'd still make time to call and write to each other (her dad
-    is very old-fashioned), but it wasn't the same. \n\nher dad liked to keep letter
-    and journal entries of his days at the store, she thinks it helped him pass the
-    time when things were slow at the store, or to just keep track of his thoughts.
-    That's one thing she's become accustomed to at her days in college, she'd look
-    forward to his letters recounting his mundane days back home. \n\nSo when weeks
-    went by without a letter or a call from him, she knew something was wrong. she
-    spent her entire finals week an anxious mess wondering what could have happened
-    to him, if anything happened to him at all. \n\nshe's made it her mission to
-    find out what happened to her dad, or she'll die trying..."
+  m_text: 'Game Synopsis:
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1085,7 +1064,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280746168
+    rgba: 4292532736
   m_fontColor: {r: 0, g: 0.85660374, b: 0.85441625, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -7723,7 +7702,7 @@ GameObject:
   - component: {fileID: 1528420103}
   - component: {fileID: 1528420102}
   m_Layer: 5
-  m_Name: Risky Isles (Title)
+  m_Name: Risky Aisles (Title)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7745,7 +7724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1459, y: -144}
+  m_AnchoredPosition: {x: -1418, y: -144}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1528420102
@@ -7768,7 +7747,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RISKY ISLES
+  m_text: RISKY AISLES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

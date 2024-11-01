@@ -18363,7 +18363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 27
   lookSpeed: 0.25
-  gravity: -22
+  gravity: -2000
   jumpHeight: 8
   playerCamera: {fileID: 330585546}
   projectilePrefab: {fileID: 949348571188967120, guid: f061473a02e80e246b3cab4a601ae080,
@@ -18372,7 +18372,7 @@ MonoBehaviour:
   projectileSpeed: 20
   holdPosition: {fileID: 1046751218}
   pickUpRange: 50
-  rotationSpeed: 50
+  rotationSpeed: 25
   interactableChecker: {fileID: 818060734}
   interactableLayer:
     serializedVersion: 2
@@ -18382,7 +18382,7 @@ MonoBehaviour:
   standingHeight: 2
   crouchSpeed: 1.5
   FridgeDoor: {fileID: 1619781849}
-  Opened: 0
+  Opened: 1
   InteractLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -18494,7 +18494,7 @@ Transform:
   m_GameObject: {fileID: 440638049}
   serializedVersion: 2
   m_LocalRotation: {x: -0.01980447, y: 0.73696595, z: 0.016328124, w: 0.6754424}
-  m_LocalPosition: {x: 114.5, y: 12.1, z: 288.2}
+  m_LocalPosition: {x: 30.1, y: 12.1, z: -127.8}
   m_LocalScale: {x: 11, y: 11, z: 11}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -59173,7 +59173,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367616866}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -91633,12 +91633,12 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Fridge
       objectReference: {fileID: 0}
     - target: {fileID: -4522013077442815353, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
