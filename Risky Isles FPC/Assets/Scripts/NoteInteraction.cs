@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;  // Add this line to include the UI namespace
 
-public class NoteInteraction : MonoBehaviour
+/*public class NoteInteraction : MonoBehaviour
 {
     public GameObject noteTextUI; // Reference to the UI text component
     public string noteContent;
@@ -61,4 +61,4 @@ public class NoteInteraction : MonoBehaviour
         noteTextUI.SetActive(false);
         isReading = false;
     }
-}
+}*/

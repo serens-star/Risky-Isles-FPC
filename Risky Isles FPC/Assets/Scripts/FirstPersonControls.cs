@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UIElements;
 
 public class FirstPersonControls : MonoBehaviour
 {
@@ -34,14 +35,24 @@ public class FirstPersonControls : MonoBehaviour
     public Transform holdPosition; // Position where the picked-up object will be held
     private GameObject heldObject; // Ref to the currently held object
     public float pickUpRange = 3f; // Range wherein objects can be picked up 
-    private bool holdingGun = false;
+    private bool isRotatingObject = false;
+    public float rotationSpeed = 100f;
+    //private bool holdingGun = false;
     public TextMeshProUGUI interactableChecker;
     //public string nameStorage;
     public LayerMask interactableLayer;
 
-    [Header("Note UI")] 
+    [Header("Rotation Controls")] 
+    //public float rotationSpeed = 100f; //The speed the objects will rotate in
+    private Vector2 rotateInput; //Stores rotation input from player
+    //private bool isRotatingObject = false;
+
+    [Header("Suspension Settings")] 
+    public float holdDistance = 3f;
+
+    /*[Header("Note UI")] 
     public GameObject noteDisplayPanel;
-    public TextMeshProUGUI noteTextDisplay;
+    public TextMeshProUGUI noteTextDisplay;*/
     
 
     [Header("Crouch Controls")]
@@ -54,19 +65,17 @@ public class FirstPersonControls : MonoBehaviour
     public int playerHp;*/
     
     
-    private void Awake()
+    /*private void Awake()
     {
         DontDestroyOnLoad(gameObject);
         // Get and store the CharacterController component attached to this GameObject
         characterController = GetComponent<CharacterController>();
         noteDisplayPanel.SetActive(false);
-    }
+    }*/
     private void OnEnable()
     {
-        if (characterController == null)
-        {
-            characterController = GetComponent<CharacterController>();
-        }
+        characterController = GetComponent<CharacterController>();
+        
         // Create a new instance of the input actions
         playerInput = new Controls(); //var
         // Enable the input actions
@@ -81,14 +90,17 @@ public class FirstPersonControls : MonoBehaviour
         // Subscribe to the jump input event 
         playerInput.Player.Jump1.performed += ctx => Jump(); //Call the Jump method when jump input is performed 
         // Subscribe to the shoot input event 
-        playerInput.Player.Shooting.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed 
+        //playerInput.Player.Shooting.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed 
         // Subscribe to the pick-up input event 
-        playerInput.Player.PickUp.performed += ctx => PickUpObject(); //Call the PickUpObject when pick-up input is performed
+        playerInput.Player.PickUp.performed += ctx => PickUpOrDropObject(); //Call the PickUpObject when pick-up input is performed
         playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call tbe ToggleCrouch Method when crouch input is performed
         
         //Interact with object using the F Key
         playerInput.Player.InterAct.performed += ctx => Interact(); //Call the PickUpObject when pick-up input is performed
-
+        
+        //Rotation Input
+        playerInput.Player.RotateObject.performed += ctx => isRotatingObject = true;
+        playerInput.Player.RotateObject.canceled += ctx => isRotatingObject = false;
     }
     private void Update()
     {
@@ -97,6 +109,15 @@ public class FirstPersonControls : MonoBehaviour
         LookAround();
         ApplyGravity();
         CheckInteractability();
+        if (heldObject != null)
+        {
+            PositionHeldObject();
+        }
+
+        if (isRotatingObject && heldObject != null)
+        {
+            RotateHeldObject();
+        }
     }
     public void Move()
     {
@@ -167,7 +188,7 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    /*public void Shoot()
     {
         if (holdingGun == true)
         {
@@ -179,16 +200,16 @@ public class FirstPersonControls : MonoBehaviour
             //Destroy the projectile after 3 seconds 
             Destroy(projectile, 3f);
         }
-    }
+    }*/
 
-    public void PickUpObject()
+    public void PickUpOrDropObject()
     {
         //Check if we're already holding an object 
         if (heldObject != null)   
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
             heldObject.transform.parent = null;
-            holdingGun = false;
+            //holdingGun = false;
             heldObject = null;
             return;
         }
@@ -211,7 +232,7 @@ public class FirstPersonControls : MonoBehaviour
                 // Attach the object to the hold position 
                 heldObject.transform.position = holdPosition.position;
                 heldObject.transform.rotation = holdPosition.rotation;
-                heldObject.transform.parent = holdPosition;
+                heldObject.transform.parent = playerCamera;
             }
             else if (hit.collider.CompareTag("Gun"))
             {
@@ -223,7 +244,7 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.position = holdPosition.position;
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
-                holdingGun = true;
+                //holdingGun = true;
             }
             //else if (hit.collider.CompareTag("Drink"))
             //{
@@ -241,29 +262,52 @@ public class FirstPersonControls : MonoBehaviour
                     //consumable.Consume(GetComponent<PlayerStats>());
                 //}
             //}
-            else if (hit.collider.CompareTag("Readable"))
+            /*else if (hit.collider.CompareTag("Readable"))
             {
                 StartCoroutine(ShowNoteUI());
                 var message = hit.collider.GetComponent<Note>();
                 noteTextDisplay.text = message.noteMessage;
-            }
+            }*/
         }
     }
 
-    private IEnumerator ShowNoteUI()
+    private void StartRotatingObject()
+    {
+        isRotatingObject = true;
+    }
+
+    private void StopRotatingObject()
+    {
+        isRotatingObject = false;
+    }
+
+    private void PositionHeldObject()
+    {
+        Vector3 targetPosition = playerCamera.position + playerCamera.forward * holdDistance;
+        heldObject.transform.position = targetPosition;
+    }
+
+    private void RotateHeldObject()
+    {
+        Vector2 rotateInput = playerInput.Player.LookAround.ReadValue<Vector2>();
+        Vector3 rotation = new Vector3(-rotateInput.y, rotateInput.x, 0) * rotationSpeed * Time.deltaTime;
+        heldObject.transform.Rotate(rotation, Space.Self);
+    }
+
+    /*private IEnumerator ShowNoteUI()
     {
         noteDisplayPanel.SetActive(true);        
         yield return new WaitForSeconds(5.75f);
         noteTextDisplay.text = " ";
         noteDisplayPanel.SetActive(false);
         yield return null;
-    }
+    }*/
 
-    public void HideNoteUI()
+    /*public void HideNoteUI()
     {
         noteDisplayPanel.SetActive(false);
     }
-    //Check Interactability shoots ray at object to check its tag/layer(details)
+    //Check Interactability shoots ray at object to check its tag/layer(details)*/
     
     [Header("Animator")]
     public Animator FridgeDoor;
