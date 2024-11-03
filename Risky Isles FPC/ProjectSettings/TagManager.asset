@@ -13,6 +13,17 @@ TagManager:
   - Readable
   - PoisonZone
   - Fridge
+  - Fridge2
+  - Fridge3
+  - Fridge4
+  - Fridge5
+  - Fridge6
+  - Fridge7
+  - Fridge8
+  - Fridge9
+  - Fridge10
+  - Fridge11
+  - Fridge12
   layers:
   - Default
   - TransparentFX

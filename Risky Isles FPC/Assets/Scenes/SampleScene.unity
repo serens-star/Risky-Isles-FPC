@@ -10012,7 +10012,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Fridge
+      value: Fridge11
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -19670,7 +19670,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Fridge
+      value: Fridge4
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -36260,7 +36260,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Fridge
+      value: Fridge9
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -44012,7 +44012,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Fridge
+      value: Fridge7
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -53804,6 +53804,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fridge door 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994421659825307346, guid: 4d5a62f2273be714b9bae69ce04b3855,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fridge2
       objectReference: {fileID: 0}
     - target: {fileID: 7225551974054052404, guid: 4d5a62f2273be714b9bae69ce04b3855,
         type: 3}
@@ -71755,7 +71760,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Fridge
+      value: Fridge5
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -74199,7 +74204,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Fridge12
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -85682,7 +85687,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Fridge10
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -91773,7 +91778,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Fridge
+      value: Fridge8
       objectReference: {fileID: 0}
     - target: {fileID: -4522013077442815353, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -92839,7 +92844,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Fridge6
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
@@ -95832,7 +95837,7 @@ PrefabInstance:
     - target: {fileID: -5924211649388543561, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}
       propertyPath: m_TagString
-      value: Fridge
+      value: Fridge3
       objectReference: {fileID: 0}
     - target: {fileID: -215472210441351915, guid: 36e1e47e610dcb1468187258df1324e9,
         type: 3}

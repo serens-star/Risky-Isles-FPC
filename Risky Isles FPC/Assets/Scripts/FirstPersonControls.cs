@@ -375,133 +375,133 @@ public class FirstPersonControls : MonoBehaviour
                 FridgeDoor.SetBool("Open", false);
             }
             //Break Section
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened2 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge2") && Opened2 == 0)
             {
                 Opened2++;
                 FridgeDoor2.SetBool("Open2", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened2 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge2") && Opened2 == 1)
             {
                 Opened2--;
                 FridgeDoor2.SetBool("Open2", false);
             }
             //Break Section
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened3 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge3") && Opened3 == 0)
             {
                 Opened3++;
                 FridgeDoor3.SetBool("Open3", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened3 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge3") && Opened3 == 1)
             {
                 Opened3--;
                 FridgeDoor3.SetBool("Open3", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened4 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge4") && Opened4 == 0)
             {
                 Opened4++;
                 FridgeDoor4.SetBool("Open4", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened4 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge4") && Opened4 == 1)
             {
                 Opened4--;
                 FridgeDoor4.SetBool("Open4", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened5 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge5") && Opened5 == 0)
             {
                 Opened5++;
                 FridgeDoor5.SetBool("Open5", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened5 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge5") && Opened5 == 1)
             {
                 Opened5--;
                 FridgeDoor5.SetBool("Open5", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened6 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge6") && Opened6 == 0)
             {
                 Opened6++;
                 FridgeDoor6.SetBool("Open6", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened6 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge6") && Opened6 == 1)
             {
                 Opened6--;
                 FridgeDoor6.SetBool("Open6", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened7 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge7") && Opened7 == 0)
             {
                 Opened7++;
                 FridgeDoor7.SetBool("Open7", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened7 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge7") && Opened7 == 1)
             {
                 Opened7--;
                 FridgeDoor7.SetBool("Open7", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened8 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge8") && Opened8 == 0)
             {
                 Opened8++;
                 FridgeDoor8.SetBool("Open8", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened8 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge8") && Opened8 == 1)
             {
                 Opened8--;
                 FridgeDoor8.SetBool("Open8", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened9 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge9") && Opened9 == 0)
             {
                 Opened9++;
                 FridgeDoor9.SetBool("Open9", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened9 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge9") && Opened9 == 1)
             {
                 Opened9--;
                 FridgeDoor9.SetBool("Open9", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened10 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge10") && Opened10 == 0)
             {
                 Opened10++;
                 FridgeDoor10.SetBool("Open10", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened10 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge10") && Opened10 == 1)
             {
                 Opened10--;
                 FridgeDoor10.SetBool("Open10", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened11 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge11") && Opened11 == 0)
             {
                 Opened11++;
                 FridgeDoor11.SetBool("Open11", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened11 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge11") && Opened11 == 1)
             {
                 Opened11--;
                 FridgeDoor11.SetBool("Open11", false);
             }
             
-            if (hit.collider.gameObject.CompareTag("Fridge") && Opened12 == 0)
+            if (hit.collider.gameObject.CompareTag("Fridge12") && Opened12 == 0)
             {
                 Opened12++;
                 FridgeDoor12.SetBool("Open12", true);
 
             }
-            else if (hit.collider.gameObject.CompareTag("Fridge") && Opened12 == 1)
+            else if (hit.collider.gameObject.CompareTag("Fridge12") && Opened12 == 1)
             {
                 Opened12--;
                 FridgeDoor12.SetBool("Open12", false);
