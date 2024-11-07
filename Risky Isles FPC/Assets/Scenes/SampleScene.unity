@@ -19552,9 +19552,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 440638055}
-  glistenDistance: 500
+  glistenDistance: 300
   glistenColor: {r: 0.96714735, g: 1, b: 0.088679194, a: 1}
-  maxEmissionIntensity: 100
+  maxEmissionIntensity: 300
 --- !u!23 &425388115
 MeshRenderer:
   m_ObjectHideFlags: 0
