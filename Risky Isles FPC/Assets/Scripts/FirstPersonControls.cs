@@ -61,6 +61,8 @@ public class FirstPersonControls : MonoBehaviour
     public float crouchSpeed = 1.5f; // rate of movement while crouching 
     private bool isCrouching = false; // ensures default position is = standing
 
+    private Light heldObjectLight;
+
     /*[Header("Player HP:")] 
     public int playerHp;*/
     
@@ -214,8 +216,15 @@ public class FirstPersonControls : MonoBehaviour
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
             heldObject.transform.parent = null;
+
+            if (heldObjectLight != null)
+            {
+                heldObjectLight.enabled = true;
+            }
+            
             //holdingGun = false;
             heldObject = null;
+            heldObjectLight = null;
             return;
         }
         
@@ -224,6 +233,7 @@ public class FirstPersonControls : MonoBehaviour
         RaycastHit hit;
         // Debugging: Draw the ray in the Scene view
         Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
+        
         if (Physics.Raycast(ray, out hit, pickUpRange))
         {
            
@@ -235,6 +245,13 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.GetComponent<Rigidbody>().isKinematic = true;
                 //Disable physics 
                 // Attach the object to the hold position 
+
+                heldObjectLight = heldObject.GetComponentInChildren<Light>();
+                if (heldObjectLight != null)
+                {
+                    heldObjectLight.enabled = false;
+                }
+                
                 heldObject.transform.position = holdPosition.position;
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = playerCamera;

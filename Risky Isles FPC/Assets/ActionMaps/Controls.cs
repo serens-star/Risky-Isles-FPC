@@ -98,6 +98,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Read"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9367d23-0a4a-4b88-b94c-52fbc79c959c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -353,6 +362,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""RotateObject"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5835b82-9903-425d-9526-9d6a81a99832"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Read"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -380,6 +400,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_InterAct = m_Player.FindAction("InterAct", throwIfNotFound: true);
         m_Player_RotateObject = m_Player.FindAction("RotateObject", throwIfNotFound: true);
+        m_Player_Read = m_Player.FindAction("Read", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -449,6 +470,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_InterAct;
     private readonly InputAction m_Player_RotateObject;
+    private readonly InputAction m_Player_Read;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -461,6 +483,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @InterAct => m_Wrapper.m_Player_InterAct;
         public InputAction @RotateObject => m_Wrapper.m_Player_RotateObject;
+        public InputAction @Read => m_Wrapper.m_Player_Read;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -494,6 +517,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @RotateObject.started += instance.OnRotateObject;
             @RotateObject.performed += instance.OnRotateObject;
             @RotateObject.canceled += instance.OnRotateObject;
+            @Read.started += instance.OnRead;
+            @Read.performed += instance.OnRead;
+            @Read.canceled += instance.OnRead;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -522,6 +548,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @RotateObject.started -= instance.OnRotateObject;
             @RotateObject.performed -= instance.OnRotateObject;
             @RotateObject.canceled -= instance.OnRotateObject;
+            @Read.started -= instance.OnRead;
+            @Read.performed -= instance.OnRead;
+            @Read.canceled -= instance.OnRead;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -567,5 +596,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnInterAct(InputAction.CallbackContext context);
         void OnRotateObject(InputAction.CallbackContext context);
+        void OnRead(InputAction.CallbackContext context);
     }
 }

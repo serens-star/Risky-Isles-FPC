@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Read",
+                    "type": "Button",
+                    "id": "d9367d23-0a4a-4b88-b94c-52fbc79c959c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -329,6 +338,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotateObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5835b82-9903-425d-9526-9d6a81a99832",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Read",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

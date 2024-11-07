@@ -18,9 +18,16 @@ public class GlistenEffect : MonoBehaviour
         if (renderer != null)
         {
             material = renderer.material;
+            if (material.HasProperty("_EmissionColor"))
+            {
+                normalColor = material.GetColor("_EmissionColor");
+                originalEmissionIntensity = Mathf.Max(normalColor.r, normalColor.g, normalColor.b);
+            }
+            else
+            {
+                Debug.LogError("Material doesn't have an _EmissionColor property");
+            }
 
-            normalColor = material.GetColor("_EmissionColor");
-            originalEmissionIntensity = Mathf.Max(normalColor.r, normalColor.g, normalColor.b);
         }
         else
         {
@@ -31,16 +38,19 @@ public class GlistenEffect : MonoBehaviour
     
     void Update()
     {
-        if (material == null) return;
+        if (material == null || !material.HasProperty("_EmissionColor")) return;
         
         float distance = Vector3.Distance(transform.position, player.position);
         Debug.Log("Distance to player: " + distance);
 
         if (distance > glistenDistance)
         {
-            float intensity = Mathf.Lerp(0, maxEmissionIntensity, (distance - glistenDistance) / glistenDistance);
+            float intensityFactor = Mathf.Clamp01((distance - glistenDistance) / glistenDistance);
+            float intensity = Mathf.Pow(intensityFactor, 2) * maxEmissionIntensity;
+            
             Color emissionColor = glistenColor * intensity;
             Debug.Log("Applying emission color: " + emissionColor);
+            
             material.SetColor("_EmissionColor", emissionColor);
             material.EnableKeyword("_EMISSION");
         }
