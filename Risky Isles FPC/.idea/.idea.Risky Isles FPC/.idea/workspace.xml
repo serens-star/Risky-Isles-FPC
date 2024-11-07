@@ -5,9 +5,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Exported Assets/More Metal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Exported Assets/More Metal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Better Milk Cartons.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Better Milk Cartons.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Better Milk Cartons.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Better Milk Cartons.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge Animated (2) 1.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge Animated (2) 1.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge Animated (2).controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge Animated (2).controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge Door 4.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge Door 4.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge door_001.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/Fridge door_001.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor10.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor10.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor11.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor11.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor12.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor12.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor3.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor3.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor5.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor5.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor6.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor6.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor7.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor7.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor8.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor8.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor9.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/FridgeDoor9.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorClosing.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/FridgeAnimation/RightFridgeDoorClosing.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Fridge_Textured.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Fridge_Textured.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Materials/Waterbottle02.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Materials/Waterbottle02.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/WaterBottle_Baking_Texture - Copy.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/WaterBottle_Baking_Texture - Copy.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/WaterBottle_Baking_Texture.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/WaterBottle_Baking_Texture.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Waterbottle02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fridge/Waterbottle02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/Street Lamp.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/Street Lamp.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/Street Lamp.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/Street Lamp.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/city unity.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/city unity.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/city unity.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery exterior/city unity.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery interior.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery interior/Hanging Light Fixtures.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery interior/Hanging Light Fixtures.blend.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery interior/Hanging Light Fixtures.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery interior/Hanging Light Fixtures.blend1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery interior/WalkieTalkie_Textured.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Grocery interior/WalkieTalkie_Textured.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,10 +152,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31352">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="31352" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -156,6 +220,9 @@
       <workItem from="1730491123376" duration="2526000" />
       <workItem from="1730575135025" duration="3384000" />
       <workItem from="1730654296675" duration="349000" />
+      <workItem from="1730931783539" duration="218000" />
+      <workItem from="1730932017775" duration="2000" />
+      <workItem from="1730934124327" duration="6112000" />
     </task>
     <servers />
   </component>
