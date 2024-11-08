@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CHARACTER/Materials/Red_SodaCan.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CHARACTER/Materials/Red_SodaCan.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/GlistenMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/GlistenMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/Materials/Materials/Cocopops02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/Materials/Materials/Cocopops02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/Materials/Materials/StrawberryFlavour.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/Materials/Materials/StrawberryFlavour.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GlistenEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GlistenEffect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Note.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Note.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NoteInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NoteInteraction.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/HealthManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FadeTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HungerThirstMeter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickupInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Shaders/Particles/ParticlesUnlit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -166,7 +165,8 @@
       <workItem from="1730932017775" duration="2000" />
       <workItem from="1730934124327" duration="6707000" />
       <workItem from="1730943692244" duration="7000" />
-      <workItem from="1730976038706" duration="5134000" />
+      <workItem from="1730976038706" duration="5758000" />
+      <workItem from="1731013255469" duration="4968000" />
     </task>
     <servers />
   </component>

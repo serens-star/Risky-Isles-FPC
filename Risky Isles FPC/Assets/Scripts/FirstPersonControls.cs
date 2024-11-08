@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class FirstPersonControls : MonoBehaviour
@@ -50,9 +51,9 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Suspension Settings")] 
     public float holdDistance = 3f;
 
-    /*[Header("Note UI")] 
+    [Header("Note UI")] 
     public GameObject noteDisplayPanel;
-    public TextMeshProUGUI noteTextDisplay;*/
+    public TextMeshProUGUI noteTextDisplay;
     
 
     [Header("Crouch Controls")]
@@ -60,6 +61,11 @@ public class FirstPersonControls : MonoBehaviour
     public float standingHeight = 2f; // make normal height
     public float crouchSpeed = 1.5f; // rate of movement while crouching 
     private bool isCrouching = false; // ensures default position is = standing
+
+    [Header("Pickup UI")] 
+    public GameObject pickupImagePopup;
+    public TextMeshProUGUI pickupText;
+    
 
     private Light heldObjectLight;
 
@@ -216,6 +222,7 @@ public class FirstPersonControls : MonoBehaviour
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
             heldObject.transform.parent = null;
+            
 
             if (heldObjectLight != null)
             {
@@ -225,6 +232,7 @@ public class FirstPersonControls : MonoBehaviour
             //holdingGun = false;
             heldObject = null;
             heldObjectLight = null;
+            pickupImagePopup.SetActive(false);
             return;
         }
         
@@ -255,6 +263,20 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.position = holdPosition.position;
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = playerCamera;
+                
+                pickupImagePopup.SetActive(true);
+
+                PickupInfo pickupInfo = heldObject.GetComponent<PickupInfo>();
+
+                if (pickupInfo != null)
+                {
+                    pickupText.text = pickupInfo.pickupMessage;
+                }
+                else
+                {
+                    pickupText.text = "You picked up: " + heldObject.name;
+                }
+                pickupText.text = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + heldObject.name;
             }
             else if (hit.collider.CompareTag("Gun"))
             {
@@ -284,12 +306,12 @@ public class FirstPersonControls : MonoBehaviour
                     //consumable.Consume(GetComponent<PlayerStats>());
                 //}
             //}
-            /*else if (hit.collider.CompareTag("Readable"))
+            else if (hit.collider.CompareTag("Readable"))
             {
                 StartCoroutine(ShowNoteUI());
                 var message = hit.collider.GetComponent<Note>();
                 noteTextDisplay.text = message.noteMessage;
-            }*/
+            }
         }
     }
 
@@ -316,20 +338,20 @@ public class FirstPersonControls : MonoBehaviour
         heldObject.transform.Rotate(rotation, Space.Self);
     }
 
-    /*private IEnumerator ShowNoteUI()
+    private IEnumerator ShowNoteUI()
     {
         noteDisplayPanel.SetActive(true);        
         yield return new WaitForSeconds(5.75f);
         noteTextDisplay.text = " ";
         noteDisplayPanel.SetActive(false);
         yield return null;
-    }*/
+    }
 
-    /*public void HideNoteUI()
+    public void HideNoteUI()
     {
         noteDisplayPanel.SetActive(false);
     }
-    //Check Interactability shoots ray at object to check its tag/layer(details)*/
+    //Check Interactability shoots ray at object to check its tag/layer(details)
     
     [Header("Animator")]
     public Animator FridgeDoor;
