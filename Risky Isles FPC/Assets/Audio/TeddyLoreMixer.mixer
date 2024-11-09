@@ -1,34 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!243 &-6326786468143793886
-AudioMixerGroupController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: EvansLoreSFX
-  m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 4b5cd9b76e1e6204bacce47e470c0a3d
-  m_Children: []
-  m_Volume: 1a4a44f6c4b01fb4aa48387de7ed4bd0
-  m_Pitch: 8604e43270277f34eb9d0026e86d499f
-  m_Send: 00000000000000000000000000000000
-  m_Effects:
-  - {fileID: -1398204948045631192}
-  m_UserColorIndex: 0
-  m_Mute: 0
-  m_Solo: 0
-  m_BypassEffects: 0
---- !u!244 &-1398204948045631192
+--- !u!244 &-1431637867790456357
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: 5cbcf7c032a5c6b449f05221443047a7
+  m_EffectID: 52338175274783e47b2e4850be750217
   m_EffectName: Attenuation
-  m_MixLevel: b7d997ce57344bd42b726d4bf8fc94e7
+  m_MixLevel: ca5ba35d31f9ffd48869234812040e6f
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -39,7 +20,7 @@ AudioMixerController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EvansLoreMixer
+  m_Name: TeddyLoreMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
@@ -51,8 +32,8 @@ AudioMixerController:
   m_ExposedParameters: []
   m_AudioMixerGroupViews:
   - guids:
-    - fb45aa47e14056249be15df7a7feb16d
-    - 4b5cd9b76e1e6204bacce47e470c0a3d
+    - dd749fa9478fc61419e298ed17c94a1b
+    - 22b5384465688fd4dadd4548a8dd9267
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -64,11 +45,11 @@ AudioMixerGroupController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: fb45aa47e14056249be15df7a7feb16d
+  m_GroupID: dd749fa9478fc61419e298ed17c94a1b
   m_Children:
-  - {fileID: -6326786468143793886}
-  m_Volume: 739b10ab05f83a54ca75148f6bb0afec
-  m_Pitch: fe03397e042ca2a44ba210c56fe4744d
+  - {fileID: 5869902767564184536}
+  m_Volume: 31ffe742026c1dd47b41056811a4840a
+  m_Pitch: 45250479c28f09c488eab2e121fec94b
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
@@ -83,9 +64,9 @@ AudioMixerEffectController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: 39fac38804e5a13458f646762b8f3706
+  m_EffectID: 253052f2929c30b498c244a631292788
   m_EffectName: Attenuation
-  m_MixLevel: c1fd32b8ab3e08c43b7f38301d7170ae
+  m_MixLevel: 4140ec9a5bf4d4f41817d2c977e731ab
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -98,9 +79,28 @@ AudioMixerSnapshotController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: fc883b4f1ba454047abe2426cf9b2a05
+  m_SnapshotID: c5183605a8dc9f842b0921022fb360d6
   m_FloatValues:
-    8604e43270277f34eb9d0026e86d499f: 1.25
-    1a4a44f6c4b01fb4aa48387de7ed4bd0: 5.4656625
-    739b10ab05f83a54ca75148f6bb0afec: 5.050064
+    31ffe742026c1dd47b41056811a4840a: 4.648102
+    f58df8b4051823145b1005ef33ffdfca: 5.050065
+    97c288cd169741347a55fd6b755c5501: 1.25
   m_TransitionOverrides: {}
+--- !u!243 &5869902767564184536
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TeddyLoreSFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 22b5384465688fd4dadd4548a8dd9267
+  m_Children: []
+  m_Volume: f58df8b4051823145b1005ef33ffdfca
+  m_Pitch: 97c288cd169741347a55fd6b755c5501
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -1431637867790456357}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
