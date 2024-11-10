@@ -25,6 +25,7 @@ TagManager:
   - Fridge11
   - Fridge12
   - Read
+  - Fridge13
   layers:
   - Default
   - TransparentFX

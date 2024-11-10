@@ -65,6 +65,13 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Pickup UI")] 
     public GameObject pickupImagePopup;
     public TextMeshProUGUI pickupText;
+
+    [Header("Pickup Notification")] 
+    public TextMeshProUGUI pickupNotificationText;
+    public float notificationDuration = 2f;
+    private Coroutine notificationCoroutine;
+    
+    
     
 
     private Light heldObjectLight;
@@ -267,16 +274,16 @@ public class FirstPersonControls : MonoBehaviour
                 pickupImagePopup.SetActive(true);
 
                 PickupInfo pickupInfo = heldObject.GetComponent<PickupInfo>();
+                
+                string message = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + heldObject.name;
 
-                if (pickupInfo != null)
+                if (notificationCoroutine != null)
                 {
-                    pickupText.text = pickupInfo.pickupMessage;
+                    StopCoroutine(notificationCoroutine);
                 }
-                else
-                {
-                    pickupText.text = "You picked up: " + heldObject.name;
-                }
-                pickupText.text = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + heldObject.name;
+
+                notificationCoroutine = StartCoroutine(ShowPickupNotification(message));
+
             }
             else if (hit.collider.CompareTag("Gun"))
             {
@@ -313,6 +320,26 @@ public class FirstPersonControls : MonoBehaviour
                 noteTextDisplay.text = message.noteMessage;
             }
         }
+    }
+
+    private IEnumerator ShowPickupNotification(string message)
+    {
+        pickupNotificationText.text = message;
+        pickupNotificationText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(notificationDuration);
+
+        float elapsedTime = 0f;
+        Color originalColor = pickupNotificationText.color;
+        while (elapsedTime < 1f)
+        {
+            elapsedTime += Time.deltaTime;
+            pickupNotificationText.color = new Color(originalColor.r, originalColor.g, originalColor.b, 1 - elapsedTime);
+            yield return null;
+        }
+        
+        pickupNotificationText.gameObject.SetActive(false);
+        pickupNotificationText.color = originalColor;
     }
 
     private void StartRotatingObject()
