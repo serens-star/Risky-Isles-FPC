@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Pharmacy/Materials/FabricPlain0154_1_350 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Pharmacy/Materials/FabricPlain0154_1_350 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Background.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Background.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorAnimation.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorCloseAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorCloseAnimation.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/FridgeDoor13.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/FridgeDoor13.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +24,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/HealthManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AreaAudioSequencer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FadeTrigger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HungerThirstMeter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -43,7 +46,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.41929135&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.22834645&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -95,10 +98,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="19564">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="19564" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -171,7 +174,8 @@
       <workItem from="1731013255469" duration="6360000" />
       <workItem from="1731194117253" duration="1704000" />
       <workItem from="1731199392937" duration="1314000" />
-      <workItem from="1731244101900" duration="6286000" />
+      <workItem from="1731244101900" duration="6763000" />
+      <workItem from="1731254747364" duration="3990000" />
     </task>
     <servers />
   </component>

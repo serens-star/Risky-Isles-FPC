@@ -393,9 +393,10 @@ public class FirstPersonControls : MonoBehaviour
     public Animator FridgeDoor10;
     public Animator FridgeDoor11;
     public Animator FridgeDoor12;
+    public Animator FridgeDoor13;
 
 
-    [SerializeField] private int Opened, Opened2, Opened3, Opened4, Opened5, Opened6, Opened7, Opened8, Opened9, Opened10, Opened11, Opened12;
+    [SerializeField] private int Opened, Opened2, Opened3, Opened4, Opened5, Opened6, Opened7, Opened8, Opened9, Opened10, Opened11, Opened12, Opened13;
     public LayerMask InteractLayer;
     public void CheckInteractability()
     {
@@ -571,6 +572,17 @@ public class FirstPersonControls : MonoBehaviour
             {
                 Opened12--;
                 FridgeDoor12.SetBool("Open12", false);
+            }
+            if (hit.collider.gameObject.CompareTag("Fridge13") && Opened13 == 0)
+            {
+                Opened13++;
+                FridgeDoor13.SetBool("Open13", true);
+
+            }
+            else if (hit.collider.gameObject.CompareTag("Fridge13") && Opened13 == 1)
+            {
+                Opened13--;
+                FridgeDoor13.SetBool("Open13", false);
             }
 
         }
