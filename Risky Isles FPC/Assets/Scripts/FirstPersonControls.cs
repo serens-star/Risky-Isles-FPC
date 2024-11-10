@@ -73,6 +73,7 @@ public class FirstPersonControls : MonoBehaviour
     
     
     
+    
 
     private Light heldObjectLight;
 
@@ -235,6 +236,13 @@ public class FirstPersonControls : MonoBehaviour
             {
                 heldObjectLight.enabled = true;
             }
+
+            PickupAudio pickupAudio = heldObject.GetComponent<PickupAudio>();
+            if (pickupAudio != null && pickupAudio.audioSource.isPlaying)
+            {
+                pickupAudio.audioSource.Stop();
+            }
+
             
             //holdingGun = false;
             heldObject = null;
@@ -272,6 +280,11 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.parent = playerCamera;
                 
                 pickupImagePopup.SetActive(true);
+                PickupAudio pickupAudio = heldObject.GetComponent<PickupAudio>();
+                if (pickupAudio != null)
+                {
+                    pickupAudio.PlayAudio();
+                }
 
                 PickupInfo pickupInfo = heldObject.GetComponent<PickupInfo>();
                 
