@@ -308,7 +308,7 @@ public class FirstPersonControls : MonoBehaviour
             //}
             else if (hit.collider.CompareTag("Readable"))
             {
-                StartCoroutine(ShowNoteUI());
+                noteDisplayPanel.SetActive(true);
                 var message = hit.collider.GetComponent<Note>();
                 noteTextDisplay.text = message.noteMessage;
             }
@@ -338,14 +338,14 @@ public class FirstPersonControls : MonoBehaviour
         heldObject.transform.Rotate(rotation, Space.Self);
     }
 
-    private IEnumerator ShowNoteUI()
+    /*private IEnumerator ShowNoteUI()
     {
         noteDisplayPanel.SetActive(true);        
         yield return new WaitForSeconds(5.75f);
         noteTextDisplay.text = " ";
         noteDisplayPanel.SetActive(false);
         yield return null;
-    }
+    }*/
 
     public void HideNoteUI()
     {
