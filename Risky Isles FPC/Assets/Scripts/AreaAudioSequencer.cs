@@ -14,6 +14,10 @@ public class AreaAudioSequencer : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
         
         if (clipDurations.Length != audioClips.Length)
         {
@@ -28,6 +32,7 @@ public class AreaAudioSequencer : MonoBehaviour
             isPlayerInArea = true;
             PlayClipsInSequence();
         }
+        Debug.Log("Inside Trigger");
     }
 
     private void OnTriggerExit(Collider other)
@@ -44,6 +49,8 @@ public class AreaAudioSequencer : MonoBehaviour
     {
         if (audioClips.Length == 0 || clipDurations.Length == 0) return;
         StartCoroutine(PlayClips());
+        
+        Debug.Log("Sound Should Play");
     }
 
     private IEnumerator PlayClips()
@@ -55,6 +62,7 @@ public class AreaAudioSequencer : MonoBehaviour
 
             audioSource.clip = audioClips[i];
             audioSource.PlayScheduled(startTime);
+            
             startTime += clipDurations[i];
 
             yield return new WaitForSeconds((float)(startTime - AudioSettings.dspTime));

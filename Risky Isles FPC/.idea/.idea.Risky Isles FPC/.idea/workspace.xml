@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/Background.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Audio/Background.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorAnimation.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorCloseAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/DoorCloseAnimation.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/FridgeDoor13.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/GroceryStoreItems/FridgeAnimation/FridgeDoor13.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AreaAudioSequencer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AreaAudioSequencer.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +170,7 @@
       <workItem from="1731194117253" duration="1704000" />
       <workItem from="1731199392937" duration="1314000" />
       <workItem from="1731244101900" duration="6763000" />
-      <workItem from="1731254747364" duration="3990000" />
+      <workItem from="1731254747364" duration="8967000" />
     </task>
     <servers />
   </component>
