@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Fruit stall/Materials/Vegetables_label.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Fruit stall/Materials/Vegetables_label.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,7 +175,7 @@
       <workItem from="1731850984715" duration="10000" />
       <workItem from="1731862172068" duration="1000" />
       <workItem from="1731944541257" duration="4745000" />
-      <workItem from="1731962200945" duration="1656000" />
+      <workItem from="1731962200945" duration="2869000" />
     </task>
     <servers />
   </component>
