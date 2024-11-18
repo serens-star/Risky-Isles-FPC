@@ -27,6 +27,7 @@ public class FirstPersonControls : MonoBehaviour
     private Vector3 velocity; // Velocity of the player
     private CharacterController characterController; // Reference to the CharacterController component
 
+    
     [Header("Shooting Controls")] 
     public GameObject projectilePrefab;//Shooting Projectile Prefab
     public Transform firePoint; // Point in which the projectile is fired from
@@ -70,7 +71,12 @@ public class FirstPersonControls : MonoBehaviour
     public TextMeshProUGUI pickupNotificationText;
     public float notificationDuration = 2f;
     private Coroutine notificationCoroutine;
-    
+
+    public Animator animator;
+
+    public bool isWalking;
+    public bool isPickingUp;
+    public bool isPushing; 
     
     
     
@@ -161,6 +167,17 @@ public class FirstPersonControls : MonoBehaviour
         
         // Move the character controller based on the movement vector and speed
         characterController.Move(move * currentSpeed * Time.deltaTime);
+
+        if (moveInput.x == 0 && moveInput.y == 0)
+        {
+            isWalking = false;
+            animator.SetBool("isWalking", false); 
+        }
+        else
+        {
+            isWalking = true;
+            animator.SetBool("isWalking", true);
+        }
     }
 
     public void ToggleCrouch()
@@ -206,7 +223,9 @@ public class FirstPersonControls : MonoBehaviour
         {
             // Calculate the jump velocity
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            
         }
+        
     }
 
     /*public void Shoot()
@@ -230,11 +249,11 @@ public class FirstPersonControls : MonoBehaviour
         {
             heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
             heldObject.transform.parent = null;
-            
 
             if (heldObjectLight != null)
             {
                 heldObjectLight.enabled = true;
+                
             }
 
             PickupAudio pickupAudio = heldObject.GetComponent<PickupAudio>();
@@ -243,8 +262,6 @@ public class FirstPersonControls : MonoBehaviour
                 pickupAudio.audioSource.Stop();
             }
 
-            
-            //holdingGun = false;
             heldObject = null;
             heldObjectLight = null;
             pickupImagePopup.SetActive(false);
@@ -263,11 +280,14 @@ public class FirstPersonControls : MonoBehaviour
             //Check if the hit object has the tag "pickup"
             if (hit.collider.CompareTag("PickUp"))
             {
+                isPickingUp = true;
+                animator.SetTrigger("isPickingUp"); 
                 //Pick up the object 
                 heldObject = hit.collider.gameObject;
                 heldObject.GetComponent<Rigidbody>().isKinematic = true;
                 //Disable physics 
                 // Attach the object to the hold position 
+               
 
                 heldObjectLight = heldObject.GetComponentInChildren<Light>();
                 if (heldObjectLight != null)
@@ -328,6 +348,7 @@ public class FirstPersonControls : MonoBehaviour
             //}
             else if (hit.collider.CompareTag("Readable"))
             {
+                animator.SetTrigger("isPickingUp");
                 noteDisplayPanel.SetActive(true);
                 var message = hit.collider.GetComponent<Note>();
                 noteTextDisplay.text = message.noteMessage;
