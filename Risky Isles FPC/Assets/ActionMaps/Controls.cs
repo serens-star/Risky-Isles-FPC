@@ -55,7 +55,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Shooting"",
+                    ""name"": ""PauseTheGame"",
                     ""type"": ""Button"",
                     ""id"": ""d6d41c6a-fc27-4dbe-ae06-85a2fd9d8995"",
                     ""expectedControlType"": ""Button"",
@@ -278,22 +278,22 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""bf6bcea9-75d0-4354-9c73-e7d5b6d07446"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""Shooting"",
+                    ""action"": ""PauseTheGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
                     ""id"": ""d56e83a4-bd59-4100-ae90-d04aadcac6cf"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/{Menu}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Shooting"",
+                    ""action"": ""PauseTheGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -375,6 +375,45 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Pause"",
+            ""id"": ""752b719d-7840-4421-964c-0911944eb05f"",
+            ""actions"": [
+                {
+                    ""name"": ""Unpause"",
+                    ""type"": ""Button"",
+                    ""id"": ""26706ca0-8803-40f3-834d-0b7c35b9051f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""292706ef-374c-4eb2-a727-91c8c8574347"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Unpause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94d3e37c-9665-4e23-b073-e40d7bb003d8"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Unpause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -395,12 +434,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_LookAround = m_Player.FindAction("LookAround", throwIfNotFound: true);
         m_Player_Jump1 = m_Player.FindAction("Jump1", throwIfNotFound: true);
-        m_Player_Shooting = m_Player.FindAction("Shooting", throwIfNotFound: true);
+        m_Player_PauseTheGame = m_Player.FindAction("PauseTheGame", throwIfNotFound: true);
         m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_InterAct = m_Player.FindAction("InterAct", throwIfNotFound: true);
         m_Player_RotateObject = m_Player.FindAction("RotateObject", throwIfNotFound: true);
         m_Player_Read = m_Player.FindAction("Read", throwIfNotFound: true);
+        // Pause
+        m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
+        m_Pause_Unpause = m_Pause.FindAction("Unpause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -465,7 +507,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_LookAround;
     private readonly InputAction m_Player_Jump1;
-    private readonly InputAction m_Player_Shooting;
+    private readonly InputAction m_Player_PauseTheGame;
     private readonly InputAction m_Player_PickUp;
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_InterAct;
@@ -478,7 +520,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @LookAround => m_Wrapper.m_Player_LookAround;
         public InputAction @Jump1 => m_Wrapper.m_Player_Jump1;
-        public InputAction @Shooting => m_Wrapper.m_Player_Shooting;
+        public InputAction @PauseTheGame => m_Wrapper.m_Player_PauseTheGame;
         public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @InterAct => m_Wrapper.m_Player_InterAct;
@@ -502,9 +544,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Jump1.started += instance.OnJump1;
             @Jump1.performed += instance.OnJump1;
             @Jump1.canceled += instance.OnJump1;
-            @Shooting.started += instance.OnShooting;
-            @Shooting.performed += instance.OnShooting;
-            @Shooting.canceled += instance.OnShooting;
+            @PauseTheGame.started += instance.OnPauseTheGame;
+            @PauseTheGame.performed += instance.OnPauseTheGame;
+            @PauseTheGame.canceled += instance.OnPauseTheGame;
             @PickUp.started += instance.OnPickUp;
             @PickUp.performed += instance.OnPickUp;
             @PickUp.canceled += instance.OnPickUp;
@@ -533,9 +575,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Jump1.started -= instance.OnJump1;
             @Jump1.performed -= instance.OnJump1;
             @Jump1.canceled -= instance.OnJump1;
-            @Shooting.started -= instance.OnShooting;
-            @Shooting.performed -= instance.OnShooting;
-            @Shooting.canceled -= instance.OnShooting;
+            @PauseTheGame.started -= instance.OnPauseTheGame;
+            @PauseTheGame.performed -= instance.OnPauseTheGame;
+            @PauseTheGame.canceled -= instance.OnPauseTheGame;
             @PickUp.started -= instance.OnPickUp;
             @PickUp.performed -= instance.OnPickUp;
             @PickUp.canceled -= instance.OnPickUp;
@@ -568,6 +610,52 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Pause
+    private readonly InputActionMap m_Pause;
+    private List<IPauseActions> m_PauseActionsCallbackInterfaces = new List<IPauseActions>();
+    private readonly InputAction m_Pause_Unpause;
+    public struct PauseActions
+    {
+        private @Controls m_Wrapper;
+        public PauseActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Unpause => m_Wrapper.m_Pause_Unpause;
+        public InputActionMap Get() { return m_Wrapper.m_Pause; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PauseActions set) { return set.Get(); }
+        public void AddCallbacks(IPauseActions instance)
+        {
+            if (instance == null || m_Wrapper.m_PauseActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PauseActionsCallbackInterfaces.Add(instance);
+            @Unpause.started += instance.OnUnpause;
+            @Unpause.performed += instance.OnUnpause;
+            @Unpause.canceled += instance.OnUnpause;
+        }
+
+        private void UnregisterCallbacks(IPauseActions instance)
+        {
+            @Unpause.started -= instance.OnUnpause;
+            @Unpause.performed -= instance.OnUnpause;
+            @Unpause.canceled -= instance.OnUnpause;
+        }
+
+        public void RemoveCallbacks(IPauseActions instance)
+        {
+            if (m_Wrapper.m_PauseActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPauseActions instance)
+        {
+            foreach (var item in m_Wrapper.m_PauseActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PauseActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PauseActions @Pause => new PauseActions(this);
     private int m_GamepadSchemeIndex = -1;
     public InputControlScheme GamepadScheme
     {
@@ -591,11 +679,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnLookAround(InputAction.CallbackContext context);
         void OnJump1(InputAction.CallbackContext context);
-        void OnShooting(InputAction.CallbackContext context);
+        void OnPauseTheGame(InputAction.CallbackContext context);
         void OnPickUp(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnInterAct(InputAction.CallbackContext context);
         void OnRotateObject(InputAction.CallbackContext context);
         void OnRead(InputAction.CallbackContext context);
+    }
+    public interface IPauseActions
+    {
+        void OnUnpause(InputAction.CallbackContext context);
     }
 }

@@ -33,7 +33,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Shooting",
+                    "name": "PauseTheGame",
                     "type": "Button",
                     "id": "d6d41c6a-fc27-4dbe-ae06-85a2fd9d8995",
                     "expectedControlType": "Button",
@@ -256,22 +256,22 @@
                 {
                     "name": "",
                     "id": "bf6bcea9-75d0-4354-9c73-e7d5b6d07446",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Shooting",
+                    "action": "PauseTheGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "d56e83a4-bd59-4100-ae90-d04aadcac6cf",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/{Menu}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Shooting",
+                    "action": "PauseTheGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -349,6 +349,45 @@
                     "processors": "",
                     "groups": "",
                     "action": "Read",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Pause",
+            "id": "752b719d-7840-4421-964c-0911944eb05f",
+            "actions": [
+                {
+                    "name": "Unpause",
+                    "type": "Button",
+                    "id": "26706ca0-8803-40f3-834d-0b7c35b9051f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "292706ef-374c-4eb2-a727-91c8c8574347",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Unpause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94d3e37c-9665-4e23-b073-e40d7bb003d8",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Unpause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,17 +1,18 @@
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class FirstPersonControls : MonoBehaviour
 {
-    private Controls playerInput;
+    public static FirstPersonControls Instance;
+    public Controls PlayerInput;
     [Header("Movement Controls")]
     // Public variables to set movement and look speed, and the player camera
     public float moveSpeed; // Speed at which the player moves
@@ -21,11 +22,11 @@ public class FirstPersonControls : MonoBehaviour
     public Transform playerCamera; // Reference to the player's camera
     
     // Private variables to store input values and the character controller
-    private Vector2 moveInput; // Stores the movement input from the player
+    private Vector2 _moveInput; // Stores the movement input from the player
     private Vector2 lookInput; // Stores the look input from the player
     private float verticalLookRotation = 0f; // Keeps track of vertical camera rotation for clamping
     private Vector3 velocity; // Velocity of the player
-    private CharacterController characterController; // Reference to the CharacterController component
+    private CharacterController _characterController; // Reference to the CharacterController component
 
     
     [Header("Shooting Controls")] 
@@ -35,18 +36,18 @@ public class FirstPersonControls : MonoBehaviour
 
     [Header("Picking Up Controls")] 
     public Transform holdPosition; // Position where the picked-up object will be held
-    private GameObject heldObject; // Ref to the currently held object
+    private GameObject _heldObject; // Ref to the currently held object
     public float pickUpRange = 3f; // Range wherein objects can be picked up 
-    private bool isRotatingObject = false;
+    private bool _isRotatingObject = false;
     public float rotationSpeed = 100f;
     //private bool holdingGun = false;
     public TextMeshProUGUI interactableChecker;
     //public string nameStorage;
     public LayerMask interactableLayer;
-
+    
     [Header("Rotation Controls")] 
     //public float rotationSpeed = 100f; //The speed the objects will rotate in
-    private Vector2 rotateInput; //Stores rotation input from player
+    private Vector2 _rotateInput; //Stores rotation input from player
     //private bool isRotatingObject = false;
 
     [Header("Suspension Settings")] 
@@ -55,13 +56,13 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Note UI")] 
     public GameObject noteDisplayPanel;
     public TextMeshProUGUI noteTextDisplay;
-    
+    public bool isHoldingNote;
 
     [Header("Crouch Controls")]
     public float crouchHeight = 1f; // make shorter 
     public float standingHeight = 2f; // make normal height
     public float crouchSpeed = 1.5f; // rate of movement while crouching 
-    private bool isCrouching = false; // ensures default position is = standing
+    private bool _isCrouching = false; // ensures default position is = standing
 
     [Header("Pickup UI")] 
     public GameObject pickupImagePopup;
@@ -70,7 +71,7 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Pickup Notification")] 
     public TextMeshProUGUI pickupNotificationText;
     public float notificationDuration = 2f;
-    private Coroutine notificationCoroutine;
+    private Coroutine _notificationCoroutine;
 
     public Animator animator;
 
@@ -81,53 +82,58 @@ public class FirstPersonControls : MonoBehaviour
     
     
 
-    private Light heldObjectLight;
+    private Light _heldObjectLight;
 
-    /*[Header("Player HP:")] 
-    public int playerHp;*/
     
     
-    /*private void Awake()
+    private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         // Get and store the CharacterController component attached to this GameObject
-        characterController = GetComponent<CharacterController>();
-        noteDisplayPanel.SetActive(false);
-    }*/
+        _characterController = GetComponent<CharacterController>();
+        
+    }
     private void OnEnable()
     {
-        characterController = GetComponent<CharacterController>();
+
         
         // Create a new instance of the input actions
-        playerInput = new Controls(); //var
+        PlayerInput = new Controls(); 
         // Enable the input actions
-        playerInput.Player.Enable();
+        PlayerInput.Player.Enable();
         // Subscribe to the movement input events 
-        playerInput.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>(); //Update moveInput when movement input is performed
-        playerInput.Player.Movement.canceled += ctx => moveInput = Vector2.zero; // \ Reset moveInput when movement input is canceled 
+        PlayerInput.Player.Movement.performed += ctx => _moveInput = ctx.ReadValue<Vector2>(); //Update moveInput when movement input is performed
+        PlayerInput.Player.Movement.canceled += ctx => _moveInput = Vector2.zero; // \ Reset moveInput when movement input is canceled 
        
         // Subscribe to the look input events 
-        playerInput.Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); //Update lookInput when look input is performed 
-        playerInput.Player.LookAround.canceled += ctx => lookInput = Vector2.zero; // Reset lookInput when look input is canceled 
+        PlayerInput.Player.LookAround.performed += ctx => lookInput = ctx.ReadValue<Vector2>(); //Update lookInput when look input is performed 
+        PlayerInput.Player.LookAround.canceled += ctx => lookInput = Vector2.zero; // Reset lookInput when look input is canceled 
         // Subscribe to the jump input event 
-        playerInput.Player.Jump1.performed += ctx => Jump(); //Call the Jump method when jump input is performed 
+        PlayerInput.Player.Jump1.performed += ctx => Jump(); //Call the Jump method when jump input is performed 
         // Subscribe to the shoot input event 
-        //playerInput.Player.Shooting.performed += ctx => Shoot(); // Call the Shoot method when shoot input is performed 
+        PlayerInput.Player.PauseTheGame.performed += ctx => PauseGameFunction(); // Call the Shoot method when shoot input is performed 
         // Subscribe to the pick-up input event 
-        playerInput.Player.PickUp.performed += ctx => PickUpOrDropObject(); //Call the PickUpObject when pick-up input is performed
-        playerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call tbe ToggleCrouch Method when crouch input is performed
+        PlayerInput.Player.PickUp.performed += ctx => PickUpOrDropObject(); //Call the PickUpObject when pick-up input is performed
+        PlayerInput.Player.Crouch.performed += ctx => ToggleCrouch(); // Call tbe ToggleCrouch Method when crouch input is performed
         
         //Interact with object using the F Key
-        playerInput.Player.InterAct.performed += ctx => Interact(); //Call the PickUpObject when pick-up input is performed
+        PlayerInput.Player.InterAct.performed += ctx => Interact(); //Call the PickUpObject when pick-up input is performed
         
         //Rotation Input
-        playerInput.Player.RotateObject.performed += ctx => isRotatingObject = true;
-        playerInput.Player.RotateObject.canceled += ctx => isRotatingObject = false;
+        PlayerInput.Player.RotateObject.performed += ctx => _isRotatingObject = true;
+        PlayerInput.Player.RotateObject.canceled += ctx => _isRotatingObject = false;
     }
     private void Update()
     {
         // Call Move and LookAround methods every frame to handle player movement and camera rotation
-        if (!isRotatingObject)
+        if (!_isRotatingObject)
         {
             Move();
             LookAround();
@@ -136,12 +142,12 @@ public class FirstPersonControls : MonoBehaviour
         ApplyGravity();
         CheckInteractability();
         
-        if (heldObject != null)
+        if (_heldObject != null)
         {
             PositionHeldObject();
         }
 
-        if (isRotatingObject && heldObject != null)
+        if (_isRotatingObject && _heldObject != null)
         {
             RotateHeldObject();
         }
@@ -149,14 +155,14 @@ public class FirstPersonControls : MonoBehaviour
     public void Move()
     {
         // Create a movement vector based on the input
-        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 move = new Vector3(_moveInput.x, 0, _moveInput.y);
         
         // Transform direction from local to world space
         move = transform.TransformDirection(move);
         
         //Adjust Speed if Crouching
         float currentSpeed;
-        if (isCrouching)
+        if (_isCrouching)
         {
             currentSpeed = crouchSpeed;
         }
@@ -166,9 +172,9 @@ public class FirstPersonControls : MonoBehaviour
         }
         
         // Move the character controller based on the movement vector and speed
-        characterController.Move(move * currentSpeed * Time.deltaTime);
+        _characterController.Move(currentSpeed * Time.deltaTime * move);
 
-        if (moveInput.x == 0 && moveInput.y == 0)
+        if (_moveInput.x == 0 && _moveInput.y == 0)
         {
             isWalking = false;
             animator.SetBool("isWalking", false); 
@@ -182,17 +188,17 @@ public class FirstPersonControls : MonoBehaviour
 
     public void ToggleCrouch()
     {
-        if (isCrouching)
+        if (_isCrouching)
         {
             //Stand Up 
-            characterController.height = standingHeight;
-            isCrouching = false;
+            _characterController.height = standingHeight;
+            _isCrouching = false;
         }
         else
         {
             //Crouch Down
-            characterController.height = crouchHeight;
-            isCrouching = true;
+            _characterController.height = crouchHeight;
+            _isCrouching = true;
         }
     }
     public void LookAround()
@@ -210,16 +216,16 @@ public class FirstPersonControls : MonoBehaviour
     }
     public void ApplyGravity() 
     {
-        if (characterController.isGrounded && velocity.y < 0)
+        if (_characterController.isGrounded && velocity.y < 0)
         {
             velocity.y = -0.5f; // Small value to keep the player grounded
         }
         velocity.y += gravity * Time.deltaTime; // Apply gravity to the velocity
-        characterController.Move(velocity * Time.deltaTime); // Apply the velocity to the character
+        _characterController.Move(velocity * Time.deltaTime); // Apply the velocity to the character
     }
     public void Jump()
     { 
-        if (characterController.isGrounded)
+        if (_characterController.isGrounded)
         {
             // Calculate the jump velocity
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -228,46 +234,52 @@ public class FirstPersonControls : MonoBehaviour
         
     }
 
-    /*public void Shoot()
+    public void PauseGameFunction()
     {
-        if (holdingGun == true)
+        var pause = PauseManager.instance;
+        if (pause.isPaused == true)
         {
-            //Instantiate the projectile at the fire point
-            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
-            //Get the RigidBody component of the projectile  & set its velocity
-            Rigidbody rb = projectile.GetComponent<Rigidbody>();
-            rb.velocity = firePoint.forward * projectileSpeed;
-            //Destroy the projectile after 3 seconds 
-            Destroy(projectile, 3f);
+            pause.ResumeGame();
         }
-    }*/
+        else if (pause.isPaused == false)
+        {
+            pause.PauseGame();
+        }
+    }
 
     public void PickUpOrDropObject()
     {
+        animator.SetTrigger("isPickingUp");
         //Check if we're already holding an object 
-        if (heldObject != null)   
+        if (_heldObject != null)   
         {
-            heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
-            heldObject.transform.parent = null;
+            _heldObject.GetComponent<Rigidbody>().isKinematic = false; //Enables Physics 
+            _heldObject.transform.parent = null;
 
-            if (heldObjectLight != null)
+            if (_heldObjectLight != null)
             {
-                heldObjectLight.enabled = true;
+                _heldObjectLight.enabled = true;
                 
             }
 
-            PickupAudio pickupAudio = heldObject.GetComponent<PickupAudio>();
+            PickupAudio pickupAudio = _heldObject.GetComponent<PickupAudio>();
             if (pickupAudio != null && pickupAudio.audioSource.isPlaying)
             {
                 pickupAudio.audioSource.Stop();
             }
+            
 
-            heldObject = null;
-            heldObjectLight = null;
+            _heldObject = null;
+            _heldObjectLight = null;
             pickupImagePopup.SetActive(false);
             return;
         }
         
+        if (isHoldingNote == true)
+        {
+            HideNoteUI();
+            isHoldingNote = false;
+        }     
         //Perfrom a Raycast from the camera's postion forward 
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         RaycastHit hit;
@@ -275,50 +287,50 @@ public class FirstPersonControls : MonoBehaviour
         Debug.DrawRay(playerCamera.position, playerCamera.forward * pickUpRange, Color.red, 2f);
         
         if (Physics.Raycast(ray, out hit, pickUpRange))
-        {
-           
+        { 
+          
             //Check if the hit object has the tag "pickup"
             if (hit.collider.CompareTag("PickUp"))
             {
                 isPickingUp = true;
-                animator.SetTrigger("isPickingUp"); 
+               // animator.SetTrigger("isPickingUp");  
                 //Pick up the object 
-                heldObject = hit.collider.gameObject;
-                heldObject.GetComponent<Rigidbody>().isKinematic = true;
+                _heldObject = hit.collider.gameObject;
+                _heldObject.GetComponent<Rigidbody>().isKinematic = true;
                 //Disable physics 
                 // Attach the object to the hold position 
                
 
-                heldObjectLight = heldObject.GetComponentInChildren<Light>();
-                if (heldObjectLight != null)
+                _heldObjectLight = _heldObject.GetComponentInChildren<Light>();
+                if (_heldObjectLight != null)
                 {
-                    heldObjectLight.enabled = false;
+                    _heldObjectLight.enabled = false;
                 }
                 
-                heldObject.transform.position = holdPosition.position;
-                heldObject.transform.rotation = holdPosition.rotation;
-                heldObject.transform.parent = playerCamera;
+                _heldObject.transform.position = holdPosition.position;
+                _heldObject.transform.rotation = holdPosition.rotation;
+                _heldObject.transform.parent = playerCamera;
                 
                 pickupImagePopup.SetActive(true);
-                PickupAudio pickupAudio = heldObject.GetComponent<PickupAudio>();
+                PickupAudio pickupAudio = _heldObject.GetComponent<PickupAudio>();
                 if (pickupAudio != null)
                 {
                     pickupAudio.PlayAudio();
                 }
 
-                PickupInfo pickupInfo = heldObject.GetComponent<PickupInfo>();
+                PickupInfo pickupInfo = _heldObject.GetComponent<PickupInfo>();
                 
-                string message = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + heldObject.name;
+                string message = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + _heldObject.name;
 
-                if (notificationCoroutine != null)
+                if (_notificationCoroutine != null)
                 {
-                    StopCoroutine(notificationCoroutine);
+                    StopCoroutine(_notificationCoroutine);
                 }
 
-                notificationCoroutine = StartCoroutine(ShowPickupNotification(message));
+                _notificationCoroutine = StartCoroutine(ShowPickupNotification(message));
 
             }
-            else if (hit.collider.CompareTag("Gun"))
+            /*else if (hit.collider.CompareTag("Gun"))
             {
                 //Pick up the Object 
                 heldObject = hit.collider.gameObject;
@@ -329,7 +341,7 @@ public class FirstPersonControls : MonoBehaviour
                 heldObject.transform.rotation = holdPosition.rotation;
                 heldObject.transform.parent = holdPosition;
                 //holdingGun = true;
-            }
+            }*/
             //else if (hit.collider.CompareTag("Drink"))
             //{
                 //ConsumableItem consumable = hit.collider.GetComponent<ConsumableItem>();
@@ -348,10 +360,9 @@ public class FirstPersonControls : MonoBehaviour
             //}
             else if (hit.collider.CompareTag("Readable"))
             {
-                animator.SetTrigger("isPickingUp");
-                noteDisplayPanel.SetActive(true);
-                var message = hit.collider.GetComponent<Note>();
-                noteTextDisplay.text = message.noteMessage;
+                //animator.SetTrigger("isPickingUp");
+                ShowNoteUI(hit);
+                isHoldingNote = true;
             }
         }
     }
@@ -378,27 +389,33 @@ public class FirstPersonControls : MonoBehaviour
 
     private void StartRotatingObject()
     {
-        isRotatingObject = true;
+        _isRotatingObject = true;
     }
 
     private void StopRotatingObject()
     {
-        isRotatingObject = false;
+        _isRotatingObject = false;
     }
 
     private void PositionHeldObject()
     {
         Vector3 targetPosition = playerCamera.position + playerCamera.forward * holdDistance;
-        heldObject.transform.position = targetPosition;
+        _heldObject.transform.position = targetPosition;
     }
 
     private void RotateHeldObject()
     {
-        Vector2 rotateInput = playerInput.Player.LookAround.ReadValue<Vector2>();
-        Vector3 rotation = new Vector3(-rotateInput.y, rotateInput.x, 0) * rotationSpeed * Time.deltaTime;
-        heldObject.transform.Rotate(rotation, Space.Self);
+        Vector2 rotateInput = PlayerInput.Player.LookAround.ReadValue<Vector2>();
+        Vector3 rotation = new Vector3(Time.deltaTime * -rotateInput.y, rotateInput.x, 0) * rotationSpeed;
+        _heldObject.transform.Rotate(rotation, Space.Self);
     }
 
+    public void ShowNoteUI(RaycastHit noteInfo)
+    {
+        noteDisplayPanel.SetActive(true);
+        var message = noteInfo.collider.GetComponent<Note>();
+        noteTextDisplay.text = message.noteMessage;
+    }
     /*private IEnumerator ShowNoteUI()
     {
         noteDisplayPanel.SetActive(true);        
@@ -455,6 +472,7 @@ public class FirstPersonControls : MonoBehaviour
        
     }
 
+    #region I DONT WANT TO READ THIS
     public void Interact()
     {
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
@@ -621,4 +639,5 @@ public class FirstPersonControls : MonoBehaviour
 
         }
     }
+    #endregion
 }
