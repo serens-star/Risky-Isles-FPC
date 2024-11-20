@@ -8,6 +8,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class FirstPersonControls : MonoBehaviour
 {
@@ -65,7 +66,7 @@ public class FirstPersonControls : MonoBehaviour
     private bool _isCrouching = false; // ensures default position is = standing
 
     [Header("Pickup UI")] 
-    public GameObject pickupImagePopup;
+    Image pickupImagePopup;
     public TextMeshProUGUI pickupText;
 
     [Header("Pickup Notification")] 
@@ -259,7 +260,6 @@ public class FirstPersonControls : MonoBehaviour
             if (_heldObjectLight != null)
             {
                 _heldObjectLight.enabled = true;
-                
             }
 
             PickupAudio pickupAudio = _heldObject.GetComponent<PickupAudio>();
@@ -267,11 +267,12 @@ public class FirstPersonControls : MonoBehaviour
             {
                 pickupAudio.audioSource.Stop();
             }
-            
 
+            PickupInfo pickUp = _heldObject.GetComponent<PickupInfo>();
+            pickUp.StopShowingInformation(pickupImagePopup);
+            
             _heldObject = null;
             _heldObjectLight = null;
-            pickupImagePopup.SetActive(false);
             return;
         }
         
@@ -293,7 +294,6 @@ public class FirstPersonControls : MonoBehaviour
             if (hit.collider.CompareTag("PickUp"))
             {
                 isPickingUp = true;
-               // animator.SetTrigger("isPickingUp");  
                 //Pick up the object 
                 _heldObject = hit.collider.gameObject;
                 _heldObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -306,12 +306,10 @@ public class FirstPersonControls : MonoBehaviour
                 {
                     _heldObjectLight.enabled = false;
                 }
+
+                _heldObject.transform.SetPositionAndRotation(holdPosition.position, holdPosition.rotation);
+                _heldObject.transform.SetParent(playerCamera);
                 
-                _heldObject.transform.position = holdPosition.position;
-                _heldObject.transform.rotation = holdPosition.rotation;
-                _heldObject.transform.parent = playerCamera;
-                
-                pickupImagePopup.SetActive(true);
                 PickupAudio pickupAudio = _heldObject.GetComponent<PickupAudio>();
                 if (pickupAudio != null)
                 {
@@ -319,6 +317,7 @@ public class FirstPersonControls : MonoBehaviour
                 }
 
                 PickupInfo pickupInfo = _heldObject.GetComponent<PickupInfo>();
+                pickupInfo.DisplayInformation(pickupImagePopup, pickupText);
                 
                 string message = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + _heldObject.name;
 
@@ -360,7 +359,6 @@ public class FirstPersonControls : MonoBehaviour
             //}
             else if (hit.collider.CompareTag("Readable"))
             {
-                //animator.SetTrigger("isPickingUp");
                 ShowNoteUI(hit);
                 isHoldingNote = true;
             }
@@ -416,14 +414,7 @@ public class FirstPersonControls : MonoBehaviour
         var message = noteInfo.collider.GetComponent<Note>();
         noteTextDisplay.text = message.noteMessage;
     }
-    /*private IEnumerator ShowNoteUI()
-    {
-        noteDisplayPanel.SetActive(true);        
-        yield return new WaitForSeconds(5.75f);
-        noteTextDisplay.text = " ";
-        noteDisplayPanel.SetActive(false);
-        yield return null;
-    }*/
+
 
     public void HideNoteUI()
     {
