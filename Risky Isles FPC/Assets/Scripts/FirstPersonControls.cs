@@ -29,11 +29,14 @@ public class FirstPersonControls : MonoBehaviour
     private Vector3 velocity; // Velocity of the player
     private CharacterController _characterController; // Reference to the CharacterController component
 
+    [Header("DEATH STATS")] 
+    public Transform headAsParent;
+    public Animator uiAnimation;
     
     [Header("Shooting Controls")] 
-    public GameObject projectilePrefab;//Shooting Projectile Prefab
+    /*public GameObject projectilePrefab;//Shooting Projectile Prefab
     public Transform firePoint; // Point in which the projectile is fired from
-    public float projectileSpeed = 20f; // Speed at which the projectile is fired
+    public float projectileSpeed = 20f; // Speed at which the projectile is fired*/
 
     [Header("Picking Up Controls")] 
     public Transform holdPosition; // Position where the picked-up object will be held
@@ -246,6 +249,13 @@ public class FirstPersonControls : MonoBehaviour
         {
             pause.PauseGame();
         }
+    }
+
+    public void DeathAnim()
+    {
+        playerCamera.SetParent(headAsParent);
+        animator.SetTrigger("isDead");
+        //uiAnimation.SetTrigger("eyesClosing");
     }
 
     public void PickUpOrDropObject()
