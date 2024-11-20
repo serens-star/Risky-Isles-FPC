@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/NarrativeAssets/Whatsapp chats (1).jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/NarrativeAssets/Whatsapp chats (1).jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FirstPersonControls.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickupInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickupInfo.cs" afterDir="false" />
     </list>
@@ -180,7 +182,7 @@
       <workItem from="1731944541257" duration="4745000" />
       <workItem from="1731962200945" duration="2869000" />
       <workItem from="1732046109566" duration="5824000" />
-      <workItem from="1732106463861" duration="2963000" />
+      <workItem from="1732106463861" duration="5864000" />
     </task>
     <servers />
   </component>

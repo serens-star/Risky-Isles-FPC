@@ -66,7 +66,7 @@ public class FirstPersonControls : MonoBehaviour
     private bool _isCrouching = false; // ensures default position is = standing
 
     [Header("Pickup UI")] 
-    Image pickupImagePopup;
+    [SerializeField] Image pickupImagePopup;
     public TextMeshProUGUI pickupText;
 
     [Header("Pickup Notification")] 
@@ -267,9 +267,9 @@ public class FirstPersonControls : MonoBehaviour
             {
                 pickupAudio.audioSource.Stop();
             }
-
+            pickupImagePopup.gameObject.SetActive((false));
             PickupInfo pickUp = _heldObject.GetComponent<PickupInfo>();
-            pickUp.StopShowingInformation(pickupImagePopup);
+            pickUp.StopShowingInformation(pickupText);
             
             _heldObject = null;
             _heldObjectLight = null;
@@ -315,18 +315,18 @@ public class FirstPersonControls : MonoBehaviour
                 {
                     pickupAudio.PlayAudio();
                 }
-
+                pickupImagePopup.gameObject.SetActive(true);
                 PickupInfo pickupInfo = _heldObject.GetComponent<PickupInfo>();
                 pickupInfo.DisplayInformation(pickupImagePopup, pickupText);
                 
-                string message = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + _heldObject.name;
+                //string message = pickupInfo != null ? pickupInfo.pickupMessage : "You picked up: " + _heldObject.name;
 
                 if (_notificationCoroutine != null)
                 {
                     StopCoroutine(_notificationCoroutine);
                 }
 
-                _notificationCoroutine = StartCoroutine(ShowPickupNotification(message));
+                _notificationCoroutine = StartCoroutine(ShowPickupNotification());
 
             }
             /*else if (hit.collider.CompareTag("Gun"))
@@ -365,9 +365,9 @@ public class FirstPersonControls : MonoBehaviour
         }
     }
 
-    private IEnumerator ShowPickupNotification(string message)
+    private IEnumerator ShowPickupNotification()
     {
-        pickupNotificationText.text = message;
+        //pickupNotificationText.text = message;
         pickupNotificationText.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(notificationDuration);
@@ -383,6 +383,7 @@ public class FirstPersonControls : MonoBehaviour
         
         pickupNotificationText.gameObject.SetActive(false);
         pickupNotificationText.color = originalColor;
+        yield return null;
     }
 
     private void StartRotatingObject()
