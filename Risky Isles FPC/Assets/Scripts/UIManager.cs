@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public string mainScene = "SampleScene";
     public GameObject aboutPanel;
+    public GameObject controlsPanel;
     
     public void ClickStart()
     {
@@ -30,10 +31,15 @@ public class UIManager : MonoBehaviour
     {
         aboutPanel.SetActive(false);
     }
-    
 
-    void Update()
+    public void OpenControls()
     {
-        
+        controlsPanel.SetActive(true);
     }
+
+    public void CloseControls()
+    {
+        controlsPanel.SetActive(false);
+    }
+    
 }
