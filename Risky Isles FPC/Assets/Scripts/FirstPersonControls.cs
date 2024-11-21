@@ -255,6 +255,7 @@ public class FirstPersonControls : MonoBehaviour
     {
         playerCamera.SetParent(headAsParent);
         animator.SetTrigger("isDead");
+        PlayerInput.Disable();
         //uiAnimation.SetTrigger("eyesClosing");
     }
 

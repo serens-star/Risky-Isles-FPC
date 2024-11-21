@@ -11,7 +11,7 @@ public class ShelfTrigger : MonoBehaviour
     private bool isTriggered = false;
 
     [Header("Kill Player")] 
-    public Image fadeImage;
+    public CanvasGroup fadeImage;
 
     public float fadeDuration;
     public float delayBeforeFade;
@@ -22,8 +22,10 @@ public class ShelfTrigger : MonoBehaviour
         {
             Debug.Log("Player triggered the shelf!");
             isTriggered = true;
+            StartCoroutine(PlayDeath());
+            StartCoroutine(FadeToBlackAfterDelay());            
             StartCoroutine(RotateShelf());
-            StartCoroutine(FadeToBlackAfterDelay());
+
         }
     }
 
@@ -42,39 +44,42 @@ public class ShelfTrigger : MonoBehaviour
         shelf.transform.rotation = targetRotation;
         yield return null;
     }
-    
+
+    private IEnumerator PlayDeath()
+    {
+        yield return new WaitForSeconds(delayBeforeFade - 5f);
+        FirstPersonControls.Instance.DeathAnim();
+    }
     private IEnumerator FadeToBlackAfterDelay()
     {
         //isPlayerInTrigger = true;
 
-        yield return new WaitForSeconds(delayBeforeFade);
-        FirstPersonControls.Instance.DeathAnim();
+        //yield return new WaitForSeconds(delayBeforeFade);
+        //FirstPersonControls.Instance.DeathAnim();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(delayBeforeFade);
         /*if (isPlayerInTrigger)
         {*/
-            float elapsed = 0f;
-            Color color = fadeImage.color;
+        yield return null;
+        fadeImage.alpha = 0;
+        float elapsed = 0f;
+        yield return null;
+        while (elapsed < fadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            fadeImage.alpha = Mathf.Lerp(fadeImage.alpha, 1f, elapsed / fadeDuration);
 
-            while (elapsed < fadeDuration)
-            {
-                elapsed += Time.deltaTime;
-                color.a = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
-                fadeImage.color = color;
-                yield return null;
-            }
-
-            color.a = 1f;
-            fadeImage.color = color;
             yield return null;
+        }
+
+        fadeImage.alpha = 1;
+        yield return null;
             //}
 
     }
 
     private void ResetFade()
     {
-        Color color = fadeImage.color;
-        color.a = 0f;
-        fadeImage.color = color;
+
     }
 }
