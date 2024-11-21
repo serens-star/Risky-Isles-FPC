@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,4 +64,4 @@ public class FadeTrigger : MonoBehaviour
         color.a = 0f;
         fadeImage.color = color;
     }
-}
+}*/

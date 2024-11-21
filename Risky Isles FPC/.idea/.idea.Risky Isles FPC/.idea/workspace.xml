@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbbf39e2-006a-4e5f-9dea-c10785fb847f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Risky Isles FPC/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FadeTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FadeTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShelfTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShelfTrigger.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +182,8 @@
       <workItem from="1731962200945" duration="2869000" />
       <workItem from="1732046109566" duration="5824000" />
       <workItem from="1732106463861" duration="10639000" />
-      <workItem from="1732138600446" duration="6024000" />
+      <workItem from="1732138600446" duration="6200000" />
+      <workItem from="1732155856470" duration="7672000" />
     </task>
     <servers />
   </component>

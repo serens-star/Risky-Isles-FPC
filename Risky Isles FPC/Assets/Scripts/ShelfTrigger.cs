@@ -12,9 +12,10 @@ public class ShelfTrigger : MonoBehaviour
 
     [Header("Kill Player")] 
     public CanvasGroup fadeImage;
+    public float fadeDuration = 7f;
+    public float delayBeforeFade = 10f;
 
-    public float fadeDuration;
-    public float delayBeforeFade;
+   
     private void OnTriggerExit(Collider other)
     {
        
@@ -22,10 +23,8 @@ public class ShelfTrigger : MonoBehaviour
         {
             Debug.Log("Player triggered the shelf!");
             isTriggered = true;
-            StartCoroutine(PlayDeath());
-            StartCoroutine(FadeToBlackAfterDelay());            
             StartCoroutine(RotateShelf());
-
+            StartCoroutine(HandleDeathSequence());
         }
     }
 
@@ -42,44 +41,63 @@ public class ShelfTrigger : MonoBehaviour
             yield return null; 
         }
         shelf.transform.rotation = targetRotation;
-        yield return null;
     }
-
-    private IEnumerator PlayDeath()
+    private IEnumerator HandleDeathSequence()
     {
-        yield return new WaitForSeconds(delayBeforeFade - 5f);
+        yield return new WaitForSeconds(delayBeforeFade);
+        
         FirstPersonControls.Instance.DeathAnim();
-    }
-    private IEnumerator FadeToBlackAfterDelay()
-    {
-        //isPlayerInTrigger = true;
-
-        //yield return new WaitForSeconds(delayBeforeFade);
-        //FirstPersonControls.Instance.DeathAnim();
+        Debug.Log("Playing Death Animation");
 
         yield return new WaitForSeconds(delayBeforeFade);
-        /*if (isPlayerInTrigger)
-        {*/
-        yield return null;
+        
+        Debug.Log("Starting Fade to Black");
         fadeImage.alpha = 0;
         float elapsed = 0f;
-        yield return null;
+        
         while (elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
-            fadeImage.alpha = Mathf.Lerp(fadeImage.alpha, 1f, elapsed / fadeDuration);
-
+            fadeImage.alpha = Mathf.Lerp(0,1,elapsed / fadeDuration);
             yield return null;
         }
 
         fadeImage.alpha = 1;
-        yield return null;
+        Debug.Log("Fade to black completed");
+        
+        //yield return StartCoroutine(PlayDeath());
+        //yield return StartCoroutine(FadeToBlackAfterDelay());
+    }
+
+    /*private IEnumerator PlayDeath()
+    {
+        Debug.Log($"Waiting {delayBeforeFade} seconds before triggering the death animation");
+        yield return new WaitForSeconds(delayBeforeFade);
+        
+    }*/
+    /*private IEnumerator FadeToBlackAfterDelay()
+    {
+        //isPlayerInTrigger = true;
+
+        //yield return new WaitForSeconds(delayBeforeFade);
+        //
+        Debug.Log($"Waiting {delayBeforeFade} seconds before triggering the death animation");
+        yield return new WaitForSeconds(delayBeforeFade);
+        
+        
+        /*if (isPlayerInTrigger)
+        {*/
+        //yield return null;
+        
+        //yield return null;
+       
+       
+        //yield return null;
+            //}
             //}
 
-    }
-
-    private void ResetFade()
+    /*private void ResetFade()
     {
 
-    }
+    }*/
 }
