@@ -3,7 +3,167 @@ guid: 61660626ff8b22041b6d980e8a6ed34b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: ebf48a76a1530ec4eacb807e5632d081, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black.001
+    second: {fileID: 2100000, guid: ce85dcaa4f079034bb9787632a69b869, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black.002
+    second: {fileID: 2100000, guid: 9abaf6202be952343bf28e6f9ebc8fa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black.003
+    second: {fileID: 2100000, guid: 1f4867c058390f14d8163a874b4f485a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black.004
+    second: {fileID: 2100000, guid: a56c5a7a133775342a841126e864c86a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackkGray
+    second: {fileID: 2100000, guid: 967644f9bbe467447a8f7fc202f94ad3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Button
+    second: {fileID: 2100000, guid: c68f279d5fa50024d9447b03f738fc92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: eeb5c86292296404bab16152253e16b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.001
+    second: {fileID: 2100000, guid: 64ca8b7b9f324254fb0098b7ad213254, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.002
+    second: {fileID: 2100000, guid: 3104b59d98d9b8a4286a7525b52a7cf9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.003
+    second: {fileID: 2100000, guid: 42aa9aa29ec312b429b40ccb4fc2dd95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass.004
+    second: {fileID: 2100000, guid: ec0a6f04b28ca264089f1d9d803b1631, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrayBlack
+    second: {fileID: 2100000, guid: f14b98ff74c891b449b3bb0cd9fdf80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrayBlack.001
+    second: {fileID: 2100000, guid: f43aabd44fb2e93499c10c3fdfe733a8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrayBlack.002
+    second: {fileID: 2100000, guid: b04448c9bcc4f4a4a80dfa6eeea2f98a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrayBlack.003
+    second: {fileID: 2100000, guid: 61cfc73b8bcc0f14494878aef24194e6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrayBlack.004
+    second: {fileID: 2100000, guid: 2f75246bd6cd58541bec7ce5cf6885bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightgrey
+    second: {fileID: 2100000, guid: 7e4081f41715ee642ab8c93ecb35ce89, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightgrey.001
+    second: {fileID: 2100000, guid: bc2bb8eba28a67d4b86a3b39fda5fad6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightgrey.002
+    second: {fileID: 2100000, guid: eb4d9820e5397be4e9b9ea6b14f03284, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightgrey.003
+    second: {fileID: 2100000, guid: 2d47dba1af6254c418cf10800a8205d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lightgrey.004
+    second: {fileID: 2100000, guid: 7d242e70236c59b47ac5d3dccedb6488, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: d6cbc8735a1d57047b49b6e85dfae881, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 3781f5d74e3f89144b9b6829c4512c13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 047fbecc7885fa74d952623404ef5752, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 1f3e27e2bc103424cbaae6aa0b750060, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 0b1c10a6c24633e40a0e3aca0b8e1410, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 0cb1ad1e20f20ae49b0f1c401b03db14, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MediumGray
+    second: {fileID: 2100000, guid: a86ea3b22916b3f499f27b605e85f99f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Phone colour
+    second: {fileID: 2100000, guid: 6c28ff6813b79444abd4df21ff739ed6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pitch black
+    second: {fileID: 2100000, guid: 57dce28d7680cdf45839541e42293b4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen
+    second: {fileID: 2100000, guid: 9635455423a2716478750bed64b4c701, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
