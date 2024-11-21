@@ -52,7 +52,7 @@ public class FirstPersonControls : MonoBehaviour
     [Header("Rotation Controls")] 
     //public float rotationSpeed = 100f; //The speed the objects will rotate in
     private Vector2 _rotateInput; //Stores rotation input from player
-    //private bool isRotatingObject = false;
+    private bool isDead = false;
 
     [Header("Suspension Settings")] 
     public float holdDistance = 3f;
@@ -207,16 +207,19 @@ public class FirstPersonControls : MonoBehaviour
     }
     public void LookAround()
     {
-        // Get horizontal and vertical look inputs and adjust based on sensitivity
-        float LookX = lookInput.x * lookSpeed;
-        float LookY = lookInput.y * lookSpeed;
-        // Horizontal rotation: Rotate the player object around the y-axis
-        transform.Rotate(0, LookX, 0);
-        // Vertical rotation: Adjust the vertical look rotation and clamp it to prevent flipping
-        verticalLookRotation -= LookY;
-        verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
-        // Apply the clamped vertical rotation to the player camera
-        playerCamera.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
+        if (isDead == false)
+        {
+            // Get horizontal and vertical look inputs and adjust based on sensitivity
+            float LookX = lookInput.x * lookSpeed;
+            float LookY = lookInput.y * lookSpeed;
+            // Horizontal rotation: Rotate the player object around the y-axis
+            transform.Rotate(0, LookX, 0);
+            // Vertical rotation: Adjust the vertical look rotation and clamp it to prevent flipping
+            verticalLookRotation -= LookY;
+            verticalLookRotation = Mathf.Clamp(verticalLookRotation, -90f, 90f);
+            // Apply the clamped vertical rotation to the player camera
+            playerCamera.localEulerAngles = new Vector3(verticalLookRotation, 0, 0);
+        }
     }
     public void ApplyGravity() 
     {
@@ -253,7 +256,12 @@ public class FirstPersonControls : MonoBehaviour
 
     public void DeathAnim()
     {
-        playerCamera.SetParent(headAsParent);
+        //playerCamera.SetParent(headAsParent);
+
+        //playerCamera.gameObject.SetActive(false);
+        //headAsParent.gameObject.SetActive(true);
+        isDead = true;
+        playerCamera.SetPositionAndRotation(headAsParent.position, headAsParent.rotation);
         animator.SetTrigger("isDead");
         PlayerInput.Disable();
         //uiAnimation.SetTrigger("eyesClosing");
@@ -434,6 +442,7 @@ public class FirstPersonControls : MonoBehaviour
     }
     //Check Interactability shoots ray at object to check its tag/layer(details)
     
+    #region I Dont like this either
     [Header("Animator")]
     public Animator FridgeDoor;
     public Animator FridgeDoor2;
@@ -448,7 +457,7 @@ public class FirstPersonControls : MonoBehaviour
     public Animator FridgeDoor11;
     public Animator FridgeDoor12;
     public Animator FridgeDoor13;
-
+#endregion
 
     [SerializeField] private int Opened, Opened2, Opened3, Opened4, Opened5, Opened6, Opened7, Opened8, Opened9, Opened10, Opened11, Opened12, Opened13;
     public LayerMask InteractLayer;

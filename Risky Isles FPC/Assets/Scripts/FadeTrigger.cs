@@ -1,67 +1,40 @@
-/*using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class FadeTrigger : MonoBehaviour
 {
-    public Image fadeImage;
+    [Header("Kill Player")] 
+    public CanvasGroup fadeImage;
     public float fadeDuration = 7f;
-    public float delayBeforeFade = 4.5f;
+    public Animator fadeAnim;
 
-    private Coroutine fadeCoroutine;
-    private bool isPlayerInTrigger = false;
-    
-    private void OnTriggerEnter(Collider other)
+    public void FadeScreen()
     {
-        if (other.CompareTag("Player") && fadeCoroutine == null)
-        {
-            fadeCoroutine = StartCoroutine(FadeToBlackAfterDelay());
-        }
+        fadeImage.gameObject.SetActive(true);        
+        fadeImage.alpha = 0;        
+        StartCoroutine(FadeToBlack());
     }
 
-    private void OnTriggerExit(Collider other)
+    public void ActivateFade()
     {
-        if (other.CompareTag("Player") && fadeCoroutine != null)
-        {
-            StopCoroutine(fadeCoroutine);
-            fadeCoroutine = null;
-            isPlayerInTrigger = false;
-            ResetFade();
-        }
+        fadeAnim.gameObject.SetActive(true);
     }
 
-    private IEnumerator FadeToBlackAfterDelay()
+    public IEnumerator FadeToBlack()
     {
-        isPlayerInTrigger = true;
-
-        yield return new WaitForSeconds(delayBeforeFade);
-
-        if (isPlayerInTrigger)
+        float timer = 0;
+        while (timer < fadeDuration)
         {
-            float elapsed = 0f;
-            Color color = fadeImage.color;
-
-            while (elapsed < fadeDuration)
-            {
-                elapsed += Time.deltaTime;
-                color.a = Mathf.Lerp(0f, 1f, elapsed / fadeDuration);
-                fadeImage.color = color;
-                yield return null;
-            }
-
-            color.a = 1f;
-            fadeImage.color = color;
+            timer += Time.deltaTime;
+            fadeImage.alpha = Mathf.Lerp(fadeImage.alpha, 1f, timer/fadeDuration);
+            yield return null;
         }
 
-        fadeCoroutine = null;
+        fadeImage.alpha = 1;
+        yield return null;
     }
-
-    private void ResetFade()
-    {
-        Color color = fadeImage.color;
-        color.a = 0f;
-        fadeImage.color = color;
-    }
-}*/
+}

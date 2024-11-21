@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Armature|Dying_Anim
-  m_Speed: 1
+  m_Speed: 0.56
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
@@ -20,8 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2040111984380944813, guid: 176665a5a32c8ec48a5415f69364f78b,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: e2349890d844fc54aae931487542177c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
