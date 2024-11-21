@@ -17687,15 +17687,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 36
-  lookSpeed: 0.2
+  lookSpeed: 0.5
   gravity: -1000
   jumpHeight: 15
   playerCamera: {fileID: 330585546}
   headAsParent: {fileID: 755009745}
-  uiAnimation: {fileID: 0}
+  uiAnimation: {fileID: 46260455}
   holdPosition: {fileID: 1046751218}
   pickUpRange: 50
-  rotationSpeed: 25
+  rotationSpeed: 0.25
   interactableChecker: {fileID: 818060734}
   interactableLayer:
     serializedVersion: 2
@@ -17787,7 +17787,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
@@ -17852,7 +17852,7 @@ Transform:
   m_GameObject: {fileID: 440638049}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: -0.7071068}
-  m_LocalPosition: {x: -130.2, y: 14.57, z: 3.9}
+  m_LocalPosition: {x: -130.2, y: 11.21, z: 3.9}
   m_LocalScale: {x: 11, y: 11, z: 11}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -59048,7 +59048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1409438758
 RectTransform:
   m_ObjectHideFlags: 0
@@ -86018,7 +86018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2001758450
 MonoBehaviour:
   m_ObjectHideFlags: 0
