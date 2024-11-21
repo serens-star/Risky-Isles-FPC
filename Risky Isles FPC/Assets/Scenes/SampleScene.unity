@@ -8383,7 +8383,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3a7232c55e9228b4093697f6ddf98ab0,
         type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8813,7 +8813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3ca7d63e367b343a18249147aec115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoDisplay: {fileID: 0}
+  infoDisplay: {fileID: 21300000, guid: 707f1fcd3b6fbb24f8982f3ee2e04fd1, type: 3}
   pickupMessage: 'Is that...? Dad''s Voice Recorder
 
 
